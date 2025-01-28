@@ -1,0 +1,448 @@
+PaperLive DevOps Training Programme 
+
+Start Date : 27th Jan. 2025 
+
+************************
+Day 1 : 27th Jan. 2025 
+************************
+
+	- Introduction to DevOps ::
+
+DevOps Overview:
+1.	Evolution of Waterfall, Agile and DevOps
+2.	What is DevOps
+3.	Why DevOps
+4.	Benefits of DevOps
+5.	DevOps Stages
+6.	DevOps Lifecycle
+7.	Various Automation in DevOps
+8.	Overview of CICD
+	
+	What is DevOps ?
+	
+	SDLC - Software Development Lifecycle
+	
+	Software ::
+	
+		--> Desktop Applications 
+		
+		--> Web Applications
+		
+		--> Mobile Applications 
+		
+		--> Embedded Applications
+	
+	SDLC - Software Development Lifecycle
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production 
+		- Maintain/Monitor
+		
+	
+	- Waterfall Model :
+	
+		--> It is Linear in fashion
+		--> It support the Top-Down approach
+		--> Meant for Monolith Application Architecture
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production 
+		- Maintain/Monitor		
+	
+		Desktop Applications ::
+			
+				--> Super-Market Billing System
+						--> Functions/Modules 
+						
+								- Inventory Mgmt.
+								- User Interface (GUI)
+								- Database 
+								- Payment 
+									--> CASH 
+									--> CARD 
+									--> UPI Payment
+								- Generate Bill ...........
+								
+		Core Project 
+			- Requirement Analysis 			===> 12 Months 
+			- Design & Document 
+			- Development/Coding 					5th Month 
+			- Testing 
+			- Implementation to Production 
+			- Maintain/Monitor	
+		
+		Enhnacement Project 
+			- Requirement Analysis 			
+			- Design & Document 
+			- Development/Coding 					
+			- Testing 
+			- Implementation to Production 
+			- Maintain/Monitor	
+	
+	
+	- AGILE Methodologies :::
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production with proper approvals
+		- Maintain/Monitor			
+	
+		Desktop Applications ::
+			
+				--> Super-Market Billing System
+						--> Functions/Modules/Iteration 
+						
+								- Inventory Mgmt.
+								- User Interface (GUI)
+								- Database 
+								- Payment 
+									--> CASH 
+									--> CARD 
+									--> UPI Payment
+								- Generate Bill ...........
+								
+	Iteration 1 : Inventory Mgmt.
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production with proper approvals
+		- Maintain/Monitor	
+		
+	Iteration 2 : User Interface (GUI)
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production with proper approvals
+		- Maintain/Monitor	
+
+	Iteration 3 : Payment - CASH/CARD 
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production with proper approvals
+		- Maintain/Monitor
+		
+	Iteration nth : Payment - UPI 
+	
+		- Requirement Analysis 
+		- Design & Document 
+		- Development/Coding 
+		- Testing 
+		- Implementation to Production with proper approvals
+		- Maintain/Monitor
+		
+		
+		Using AGILE Methodologies:
+		
+			we can able to perform :
+			
+				- Continuous Development
+				- Continuous Integration 
+				- Continuous Testing
+				- Continuous Delivery 
+						--> It expects the manual approvals for production release 
+				
+			We cannot Achieve :
+			
+				- Continuous Deployment
+						--> It never expects any manual approvals for production release 
+				
+				
+	- DevOps ::::
+	
+	What is DevOps ?	
+
+		- DevOps is Software Development Strategies which promote the collaboration between the Teams like Development Team and Operations Team in order to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automated fashion.
+		
+	How to Implement DevOps :::::?
+	
+		Teams involved in SDLC :::
+		
+			- Infra-structure Management Team 
+			- Application Development Team 
+			- Testing Team 
+			- Release Management Team 
+			- Production Support Team 
+			- Production Monitoring Team 
+			- IT Security Team
+			
+			
+		Environments :::
+		
+			Non-Prod Environments								Production Environments
+
+				Dev Environment
+				
+				Build Environment
+				
+				Test Environments
+					QA 
+					
+					UAT 						===========>			Production Servers
+					
+		
+		Application Architecture :::
+		
+			- Monolith Application Architecture
+				- It is tightly coupled 
+				- All the Functions/Modules/Dependencies are defined together 
+				- We can achieve Continuous Delivery not Continuous Deployment
+			
+			- Micro-Service based Application Architecture
+				- The Application are loosely coupled 
+				- Each and every function/module are defined as a independent service
+				- The whole Application is divided into Micro-Services 
+				- This is used to Achieve Continuous Deployment
+				
+	
+		DevOps Stages ::::
+		
+			- Continuous Development ::
+			
+				- It is the capability of the Application Development Team to Continuously Develop the Application Source Code based on the business requirement.
+				
+				- This on DevOps perspective aims to improve the Developers' productivity.				
+				
+				Role of Developers :
+				
+					- Create the Source Code.
+					
+					- Create the Source code 
+					- Build the Source code 
+						--> Compile the Source Code and Create Artifacts (Binaries - *.exec/*.dll/*.war/*.jar)
+					- Perform Unit Testing 
+					- Promote the Changes to Test/Target Environment
+					- Send the Email Notifications to the Testing Team 
+					
+				Using DevOps Approach :
+				
+					- Create the Source Code 
+					- Save/Update the Source Code Changes in the Source Code Repository(github)
+					
+					Automate: 
+					
+					- Build the Source code 
+						--> Compile the Source Code and Create Artifacts (Binaries - *.exec/*.dll/*.war/*.jar)
+					- Perform Unit Testing 
+					- Promote the Changes to Test/Target Environment
+					- Send the Email Notifications to the Testing Team 	
+
+				Tools :
+				
+					- IDEs - (Integrated Development Environment) - Eclipse based IDEs - Pycharm - Visual Studio - Visual Studio Code - Eclipse 
+					
+					- GIT/Github 
+				
+			
+		- Continuous Integration :
+
+			- It is the capability of the Application Development Team to Continuously Integrate their code changes for further Testing.
+
+				Automate: 
+				
+				- Build the Source code 
+					--> Compile the Source Code and Create Artifacts (Binaries - *.exec/*.dll/*.war/*.jar)
+				- Perform Unit Testing 
+				- Promote the Changes to Test/Target Environment
+				- Send the Email Notifications to the Testing Team 	
+				
+			Tools :
+				- IDEs - (Integrated Development Environment) - Eclipse based IDEs - Pycharm - Visual Studio - Visual Studio Code - Eclipse 				
+				- GIT/Github 	
+				- Build Tools : Maven/Gradle 
+				- Unit Testing Tools - JUnit / TestNG
+				- Jenkins, Docker, Kubernetes, Ansible
+				
+			- Continuous Testing 
+			
+			- Continuous Delivery / Deployment
+			
+			- Continuous Monitoring
+			
+			
+************************
+Day 2 : 28th Jan. 2025 
+************************		
+		
+	- Continuous Testing :::
+			
+			- It is the capability of the Testing Team to Continuously Test the changes changes based various test cases and test data.
+			- Create Test Data, Test Scenarios/Cases.
+			
+			
+			Tools :
+			
+				- TestNG, Junit, Selenium
+				- Jenkins 
+				
+	- Continuous Delivery / Deployment :::
+		
+			- Both Continuous Delivery and Continuous Deployment are used to perform Production release.
+			
+			- Continuous Delivery :
+			
+				- Here, Manual Approvals are required to promote the changes from Non-Prod to Prod Environment
+				- During Continuous Delivery process, there might downtime.
+				- For Monolith Applications Continuous Delivery process can be used for production release.
+
+				Eg.: 
+					Banking Applications - online - Banking/Card
+					
+					Production Release Window :	4Hrs - 6Hrs 
+					
+						-> Fix the Issue.
+						
+						-> Rollback/Revert the changes
+					
+			- Continuous Deployment :
+			
+				- Here, No Manual Approvals are required to promote the changes from Non-Prod to Prod Environment
+				- The Production release can be achieved without any downtime.
+				- The Continuous Deployment can be achieved only using Micro-Service based Application Architecture.
+	
+				Eg.: 
+					Netflix/Facebook/amazon.com 
+					
+					
+		www.amazon.com ::	E_Commerce Web Application
+		
+			Sign-Up 		- Micro-Service1 -> Developer1 - Code,UnitTest,Promote to Further Testing ==> Deploy to Prod			
+			Sign-In			- Micro-Service2
+			Search 
+			Add to Cart
+			Place the Order 
+			Payment 
+			Confirm
+			Track
+			
+			Tools :
+			
+				Jenkins,Docker,Kubernetes,Ansible
+				
+				
+	- Continuous Monitoring	:::
+
+		- Used to Continuously Monitor the Production Environments and the Applications Deployed in Production Environments.
+		
+		- Done by the Production Monitoring Team.
+		
+		- Infra-structure Monitoring
+		
+			- Prometheus/Grafana/Splunk/Dynatrace 
+			- Jenkins 
+			
+				- CPU and Memory / Network Traffic 
+				
+				- 75% --> alert the Team 
+		
+		
+		- Application Monitoring
+		
+			- AppDynamics/DataDog 
+			- Jenkins
+				
+				
+	Infra-structure Management Team :::
+	
+	
+		Provision/Create the IT Resources(Servers)		-- Terraform/Cloudformation/ARM
+		
+		Configure the Servers 							-- Ansible/Chef/Puppet
+					
+				IAC(Infra-structure As Code) Tools - 
+
+		Jenkins 
+		
+		
+	
+	
+	Role of DevOps ????
+	
+				
+		Teams involved in SDLC :::
+
+			- DevOps Team 		
+				- Infra-structure Management Team 
+				- Application Development Team 
+				- Testing Team 
+				- Release Management Team 
+				- Production Support Team 
+				- Production Monitoring Team 
+				- IT Security Team		
+				
+				
+				
+	DevOps CICD ->
+	
+		Using Jenkins 
+		
+	Lifecycle of DevOps CICD Pipeline :	
+		
+		-	Developers Create the Source-Code 
+		
+			-	Save the Source-Code Changes in Source-Code Repository(GitHub)
+
+				- 	SCM_Checkout
+				
+					-	Build the Code 
+					
+						-	Create Artifacts 
+						
+							-	Unit Test 
+							
+								- 	Promote the Changes for Further Testing 
+								
+									-	Automate Testing 
+								
+										-	Deploy to Production Environment 
+										
+											-	Continuous Monitor
+											
+												Feedback 
+		
+	
+	
+	DevOps :
+	
+		DevOps Associate 
+		DevOps Lead 
+		DevOps Architect
+		DevOps Consultant 
+		SRE 
+		
+		Scripting Languages :
+		
+			- shell Scripting 
+			- Groovy Scripting
+			- Yaml Scripting
+			- Python Scripting
+	
+	
+	SDLC :
+	
+		Waterfall - AGILE - DevOps - DevSecOps - SRE - GItOps - AIOps - MLOps 
+	
+		- DevOps is Software Development Strategies which promote the collaboration between the Teams like Development Team and Operations Team in order to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automated fashion.	
+		
+	DevOps is all about :
+	
+		- People 
+		- Process
+		- Tools 
+		
+	
+		

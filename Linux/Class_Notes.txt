@@ -1,1 +1,168 @@
-Linux_Notes
+************************
+Day 3 : 29th Jan. 2025 
+************************
+				
+Fundamentals of Linux Operating System:
+1.	Overview of Linux
+2.	Linux Architecture
+3.	Linux Distributions
+4.	Basic Linux Commands
+5.	File Permission Management
+6.	User Creation
+7.	Shell Scripts
+8.	SSH and VI Utility
+
+
+Operating System :::
+
+	Fundamentals of Linux Operating System 
+	
+		- Windows 
+		- Mac 
+		- Linux 
+		
+	Linux Operating System 
+		- Open-Source 
+		- Is Secured 
+		- Linux OS was created based on the Unix Operating System 
+		- Is an interface between the user applications and underlying Hardware.
+		- Linux OS is based on the Command User Interface
+		- Core of Linux OS is called kernel!
+			Components of Linux OS Architecture
+				- Networking 
+				- Storage 
+				- IPC - Inter Process Communication
+				- User Management 
+				- Security Management 
+				- Control Groups 
+				- Namespace 
+				- Process 
+			
+		- Command Line Interface 
+		
+	Linux Distributions --> 
+	
+		--> Versions or types of Linux OS.
+		--> Flavor of Linux OS
+		
+		- Centos / RHEL 
+		
+		- Debian / Ubuntu
+		
+		- Fedoro
+		
+		- Amazon Linux2 
+		
+			-> Based on Federo Distribution
+			
+		
+		- Packages :::
+		
+			Package Management - Package Managers :::
+				- Package Managers are used to install/Uninstall/Upgrade the Packages/software 
+			
+					- Centos / RHEL 		===> 	yum package Manager 
+					- Debian / Ubuntu 		===>	apt/apt-get package Manager 
+					- Fedora				===>	dnf (Latest Version of Fedora)
+													yum (Previous Version of Fedora)
+													
+				- Package Managers can be executed only by the root user on Linux
+				
+					- TO work with Package Manager :
+						- Elevate the Access to Root Level 
+							- sudo -i			# This Command is used to elevate the access to root level
+
+
+	Learn Linux on DevOps Perspectives :
+	
+		What the Role of DevOps Team/Engineer on Linux.
+		
+			- All the DevOps Tools can be installed and Managed in Linux Machines 
+		
+		What is your role here ????
+		
+			- Install all the DevOps Tools 
+			- Package Management - Periodically Upgrade/Uninstall - Backup of the Tools
+			- Managing Remote Servers 
+				- Client Server Architecture 
+				- Server1 (VM)
+					- Client1,2,3,4,5,6
+					
+			- As a DevOps Team we can Manage the Linux Machines
+			
+				- Package Management 
+				- File Management 
+				- User Management 
+				- Access Management 
+				- Remote Servers Management 
+				- Process Automation(Shell Scripting)
+				
+	AWS Cloud Platform :
+	
+		--> Create Virtual Machines(VM) - Linux based OS 
+				--> Install and work with DevOps Tools 
+	
+	Lab Environment ::::
+	
+		- Create a Fier Tier Account on AWS Cloud 		# aws.amazon.com/console/
+														# https://signin.aws.amazon.com/signup?request_type=register
+														
+			- Avail Free Tier Account access for 12 Months
+		
+		- Active Email_ID, Mobile Number, Credit/Debit Card(International Transaction Enabled)
+		
+		- Create Free-tier AWS Account - Basic Plan 
+		
+		- Login to AWS Console as a root user.		# aws.amazon.com/console/
+			- Email_ID 
+			- Password 
+		
+		- Access to AWS Console :
+		
+			- EC2 Service (Elastic Compute Service) --> Create EC2 Instances VM.
+			
+			
+		- Working with (VM) EC2 Instances :
+		
+			- Create an EC2 Instance
+			
+				- Name/Tag
+				
+				- AMI - Amazon Machine Image 			# Identify the type of OS - Amazon Linux/Ubuntu/Windows/Mac
+				- Instance Type 						# CPU & RAM 
+				- Key Pairs								# Used to Securely Login to EC2 Instances 
+				
+				
+				- Network
+				- Security Group 
+				- Volumes 
+				
+					Authentication Types :
+					
+						SSH Connection to any Linux based Remote Servers 
+						
+							- Password based Authentication
+							- Token based Authentication
+							- Key-Based Authentication
+								- Public Key/Authorized Key 
+								- Private Key 
+							- Passwordless Connection
+							
+Next :
+
+	- Launch an EC2 Instance 
+			- ubuntu v22.04 AMI 
+			- t2.mirco
+			
+	- Connect to EC2 Instance
+
+			Using SSH Connection
+
+	- Working with Linux 	
+			
+				- Package Management 
+				- File Management 
+				- User Management 
+				- Access Management 
+				- Remote Servers Management 
+				- Process Automation(Shell Scripting)		

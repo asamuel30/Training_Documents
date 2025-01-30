@@ -166,3 +166,314 @@ Next :
 				- Access Management 
 				- Remote Servers Management 
 				- Process Automation(Shell Scripting)		
+
+
+************************
+Day 4 : 30th Jan. 2025 
+************************		
+				
+	- Launch an EC2 Instance 
+	
+		- Login to AWS Console 
+			- goto EC2 Instance Dashboard 
+			
+				- Select Launch EC2 Instance Button
+
+				- Key-in the required parameters to Create an EC2 Instance
+				
+					- Name/Tag
+					
+					- AMI - Amazon Machine Image 			# Identify the type of OS - Amazon Linux/Ubuntu/Windows/Mac
+						- ubuntu v22.04 AMI 
+					
+					- Instance Type 						# CPU & RAM 
+					- Key Pairs								# Used to Securely Login to EC2 Instances 
+						- Create Key Pairs	
+							- Downloads - *.pem				# Private Key 
+					
+					
+					- Network
+					- Security Group 
+					- Volumes 
+
+
+	
+			- ubuntu v22.04 AMI 
+			- t2.mirco
+			
+			
+			1 VM ==> 750 Hrs / Month 
+			
+			10 VM ==> 75 Hrs/Month
+			
+			
+			Using SSH Connection
+			
+				--> Parameters required to Connect to remote servers using SSH :
+						
+						- Host_Name	 			# Public IP_Address 		
+						- User_Name 			# ubuntu					---> for Ubuntu Machine 
+						- Private Key
+						
+	- Connect to EC2 Instance(VM)
+
+			Using SSH Connection
+			
+				--> Parameters required to Connect to remote servers using SSH :
+						
+						- Host_Name	 		
+						- User_Name 
+						- Private Key
+			
+			Various Modes to Access EC2 Instances :			
+			
+				-> EC2 Instance Connect using AWS Console 
+				
+				-> SSH Agents :			# Install in Local Windows Machine
+				
+					- MobaXterm			# https://mobaxterm.mobatek.net/download-home-edition.html
+					- putty 
+					
+				-> Terminal				# Mac/Linux/Windows	
+	
+	
+	- Working with Linux 	
+			
+				- Package Management 
+				- File Management 
+				- User Management 
+				- Access Management 
+				- Remote Servers Management 
+				- Process Automation(Shell Scripting)		
+	
+	- Package Management :::
+	
+		--> Process to Manage any Linux Packages/Software 
+		--> Install/Uninstall/Upgrade the Packages
+		--> Package :		
+				Tool 
+				Service 
+														Java Build Environment :		Tomcat Server :
+														
+				-> Install the Pre-requisities 				- Install JDK 					- Install JDK
+				-> Install the Actual Package 				- Install Maven					- Install Tomcat  
+				-> Perform Post Install Activities 											- Start Tomcat Service 
+				
+
+			- Package Managers are used to install/Uninstall/Upgrade the Packages/software 
+		
+				- Centos / RHEL 		===> 	yum package Manager 
+				
+				- Debian / Ubuntu 		===>	apt/apt-get package Manager 
+				
+				- Fedora				===>	dnf (Latest Version of Fedora)
+												yum (Previous Version of Fedora)
+												
+				- Amazon Linux 			===> 	dnf (Latest Version of Amazon Linux)
+				                                yum (Previous Version of Amazon Linux)
+												
+			- Package Managers can be executed only by the root user on Linux
+			
+				- TO work with Package Manager :
+					- Elevate the Access to Root Level 
+						- sudo -i			# This Command is used to elevate the access to root level
+						
+						
+			How to Install/Manage Packages ? :::
+			
+			- Elevate the Access to Root Level
+				sudo -i 							# This Command is used to elevate the access to root level
+				
+			- apt update 							# Used update the default packages
+			
+			- apt install git 						# Install GIT 
+			
+			- apt install openjdk-11-jre -y			# Install Java Package 
+			
+			- java --version						# Check the Version 
+				
+			- apt install maven -y 					# Install Maven Build Tool
+			
+			- apt install nginx -y 					# Install Nginx Web Application Server	- This runs as a service
+													# Nginx Service runs in the default port 80 
+													
+													# Tomcat 	: 8080
+													# jenkins 	: 8080
+
+			- Linux Application Service(nginx/Jenkins) 		
+			
+				- Start / Stop / Enable / Status / restart 
+				
+				systemctl status nginx 
+				
+				systemctl start nginx
+				
+				systemctl stop nginx
+				
+				systemctl enable nginx		# Used to define the service as as start up service
+		
+				systemctl disable nginx		# Used to remove the service from the start-up task list
+				
+				systemctl restart nginx 	
+				
+				
+			- apt update nginx -y 			
+			
+			- apt remove nginx -y			# Uninstall a package 
+			
+			
+			
+	- File Management :::
+	
+		Folders / Directories 
+			- Collection of Files and Directories
+
+			dir 
+			
+		Any Linux User - will have Home Directory  
+		
+
+
+		- File Management 	
+
+			- pwd 				# Present Working Directory
+			
+			- sudo -i 
+			
+			- exit 				# Logout from current linux user 
+
+
+			- ls 				# Is to List the files and Directories 
+			
+			- ll 				# Long Listing - to get the full property of the directory
+			
+			- ls -a				# List All(List all the files, including hidden files and directories)
+			
+			- clear 			# Clear the Screen				
+				
+			- mkdir <dir_name>	# used to Creae Directory 
+				
+			Navigate to Directories :::
+
+				- pwd				# Get the Present Working Directory
+
+				- cd ..				# Go Back to Previous Directory
+				
+				- cd <dir_name> 	# Change to a specific directory				
+				
+				- cd /				# This command will take to the root directory			
+			
+				- cd ~				# This command will take to the home directory(Default Directory) of the specific linux user
+									Eg.: 	ubuntu 	===> /home/ubuntu 
+		
+									root	===> /root		
+									
+			Create Files :
+				
+					- touch <file_name>					# used to create an empty file 
+					
+					- echo "Record1" >> <file_name>		# To create a file with a record
+							
+					- vi <file_name>		# Used to Create / edit a file using vi editor
+					
+					
+			Read the file content :
+				
+					cat <file_name>			# Read the Content of a file
+					
+					
+					- vi <file_name>		# Used to Create / edit a file using vi editor
+
+					Eg.: 
+					
+						vi file1.txt 
+						
+							press i 		# goto insert mode 
+							
+							#type some contents
+							#type some contents				
+							
+							press esc :wq	# Save and Exit from a file 
+	
+							press esc :q!	# Exit from a file without saving it. 				
+
+
+    1  apt update -y
+    2  clear
+    3  yum update -y
+    4  clear
+    5  apt install git
+    6  apt install openjdk-11
+    7  apt install openjdk-11-jre
+    8  java --version
+    9  git --version
+   10  apt install nginx -y
+   11  nginx --version
+   12  nginx -version
+   13  systemctl status nginx
+   14  systemctl stop nginx
+   15  systemctl status nginx
+   16  apt upgrade nginx -y
+   17  exit
+   18  pwd
+   19  exit
+   20  pwd
+   21  ls
+   22  ls -a
+   23  ll
+   24  clear
+   25  pwd
+   26  ls -a
+   27  ll
+   28  clear
+   29  ls
+   30  mkdir dir1
+   31  ls
+   32  ll
+   33  clear
+   34  ls
+   35  mkdir dir2
+   36  ls
+   37  ped
+   38  pwd
+   39  cd dir1
+   40  pwd
+   41  cd ..
+   42  pwd
+   43  clear
+   44  pwd
+   45  cd /
+   46  pwd
+   47  ls
+   48  cd home/
+   49  ls
+   50  cd ubuntu/
+   51  pwd
+   52  clear
+   53  cd ~
+   54  pwd
+   55  clear
+   56  ls
+   57  cd dir1/
+   58  pwd
+   59  ls
+   60  clear
+   61  touch file1.txt
+   62  ls
+   63  cat file1.txt
+   64  touch file2.txt file3.txt
+   65  ls
+   66  echo "Hello"
+   67  echo "Hello" >> testfile1.txt
+   68  ls
+   69  cat testfile1.txt
+   70  echo "Hello" >> file1.txt
+   71  cat file1.txt
+   72  vi samplefile1.txt
+   73  cat samplefile1.txt
+   74  clear
+   75  vi samplefile1.txt
+   76  cat samplefile1.txt
+   77  clear
+   78  cd ~
+   79  history

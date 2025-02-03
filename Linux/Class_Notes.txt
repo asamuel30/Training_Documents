@@ -477,3 +477,474 @@ Day 4 : 30th Jan. 2025
    77  clear
    78  cd ~
    79  history
+
+
+							
+************************
+Day 5 : 3rd Feb. 2025 
+************************	
+
+				- Package Management 
+				- File Management 
+				- User Management 
+				- Access Management 
+				- Remote Servers Management 
+				- Process Automation(Shell Scripting)	
+				
+
+		- File Management(Continued)
+
+
+			Directories / Files ::
+			
+				Create 
+				
+				Update 
+				
+				Delete 
+				
+				Rename 
+				
+				Copy 
+				
+				Move 
+			
+			
+			Rename File or Directory :::
+			
+						mv <existing_file_Name> <New_File_Name>
+					
+						mv file1 file-new-name
+						
+						mv dir1 new-dir-name
+						
+			Delete a file or Directory :::
+					
+						rm <file_Name>			# Remove File  
+						
+						rm file1.txt 
+						
+						rm *.txt
+						
+						rm -r <dir_Name>		# Remove Directory
+						
+						rm -rf <dir_name>		# Forceful Deletion of Directory
+						
+						
+			Copy files from one directory to another :::
+			
+						cp <source_file> <Target_Dir>	# Used to copy a file to target folder 
+						
+						mv <source_file> <Target_Dir>	# Used to move a file to target folder 
+			
+						mv file1 file-new-name			# To Rename a file
+						mv dir1 new-dir-name			# To Rename a directory
+		
+			File Access ::::
+			
+				Who can Access the file ?
+				
+					- By Default, Owner will have complete access. 			
+
+
+
+		File :
+		
+			script 
+			program 
+			artifacts 
+			
+			
+			>> ll 						# Long Listing 
+			
+		
+		-rw-r--r--  1 root root  161 Apr 22  2024 .profile
+		drwx------  2 root root 4096 Jan 30 01:55 .ssh/
+		-rw-------  1 root root 1389 Jan 30 03:25 .viminfo
+		drwxr-xr-x  3 root root 4096 Feb  3 02:00 dir1/
+		
+		----------
+		
+		-									# Denote dir or file (Possible value:  d or - )
+												'd'  Denotes Directory
+												'-'  Denotes File 
+												
+												
+		 ---								# Denote the Owner Level Access 
+												Possible Values: r / w /x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access 
+		
+			---								# Denote the Group Level Access
+												Possible Values: r / w /x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access
+
+			   ---							# Denote the Public User Level Access
+												Possible Values: r / w /x 
+												r - Read only Access 
+												w - Write Access 
+												x - Execute Access
+												
+		
+		User 
+		
+		Group 
+		
+		User 
+		
+		Group 
+		
+		Role Based Access Control : 
+		
+		RBAC --> User_ID --> Group
+
+			dev_user1
+			Developer_grp 
+			
+			Test_User1 
+			Tester_Grp
+	
+
+		Default Access assigned to a dir/file :
+			
+			drwxr-xr-x  3 root root 4096 Feb  3 02:00 dir1/
+			
+			-rw-r--r--  1 root root    5 Feb  3 02:17 file1.txt
+			
+			-rw-r--r--  1 root root    5 Feb  3 02:19 test1.sh
+
+
+
+	
+	- File Access Management :::
+	
+		-> Give Access to the Files/Directories 
+		
+
+		Access Mode :::
+			r - Read only Access 
+			w - Write Access 
+			x - Execute Access	
+			
+		chmod <Access_Level> <File/Directory_Name>		
+		
+		https://nettools.club/chmod_calc
+		
+		chmod 600 dir1/*
+		
+		Folder ::::
+		
+		
+			file1.txt_v1.0		==> 	Test_dir1		file1.txt_v1.0	
+			
+			file1.txt_v1.1		==> 	Test_dir1		file1.txt_v1.1
+		
+		
+	- User Management :::
+	
+		-> Give Access to the Users -- handling remote servers 
+		
+		
+		Create Linux Users :::
+		
+			ubuntu user 				# In Ubutu server -- Default User is ubuntu
+			
+			root user 					# Administrator 
+			
+			
+			
+			devopsadmin					# Linux User
+			
+		
+		Linux Machine uses SSH(Secure SHell) Connection
+			--> Host_Name,User_Name,Credentials
+		
+		User Authentication?
+			SSH Authentication Methods :
+			
+				- Password Based Authentication
+				- Token Based Authentication
+				- Key Based Authentication
+					- Public Key/Private Key 
+				- Passwordless 
+		
+		How to Create Linux User?
+			- devopsadmin 
+
+
+		Create Linux User with SSH Keys :::
+		
+			root@ip-172-31-1-164:~# useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin			# In Ubuntu Machines!
+			
+			#useradd devopsadmin
+			
+			passwd devopsadmin													# Create Password 
+
+			root@ip-172-31-1-164:~# passwd devopsadmin
+			New password:
+			Retype new password:
+			passwd: password updated successfully
+
+
+				- Key Based Authentication
+					- Public Key/Private Key 
+					
+					- authorized_keys			# Should be create based on the public of the user
+					
+					- authorized_keys file will be compared with the private key(which we pass during login)
+
+
+
+			# Create SSH Keys for devops admin user :
+			
+			
+				ssh-keygen -t ecdsa -b 521										#ubuntu 22.04 or higher version of ubuntu				
+
+				cd .ssh
+				
+				ls ~/.ssh 
+
+				#You should see following two files:
+
+				#id_ecdsa - private key
+				#id_ecdsa.pub - public
+				
+				cat id_ecdsa.pub > authorized_keys			# authorized_keys this file name should be same.
+				
+				authorized_keys :::
+					It is the copy of Public Key.
+					
+					Always the private key will be compared with the authorized_keys
+	
+				chmod 600 /home/devopsadmin/.ssh/*					# Used to Change the Access Mode of Files or Directories
+				
+
+
+   1  pwd
+    2  exit
+    3  pwd
+    4  clear
+    5  exit
+    6  clear
+    7  ls
+    8  ls -a
+    9  exit
+   10  ls -a
+   11  ssh-keygen -t ecdsa -b 521
+   12  ls -a
+   13  cd .ssh/
+   14  ls
+   15  ll
+   16  cat id_ecdsa
+   17  cat id_ecdsa.pub
+   18  ls
+   19  cat id_ecdsa.pub > authorized_keys
+   20  ls
+   21  ll
+   22  chmod 600 /home/devopsadmin/.ssh/*
+   23  ll
+   24  clear
+   25  history
+
+
+    1  apt update -y
+    2  clear
+    3  yum update -y
+    4  clear
+    5  apt install git
+    6  apt install openjdk-11
+    7  apt install openjdk-11-jre
+    8  java --version
+    9  git --version
+   10  apt install nginx -y
+   11  nginx --version
+   12  nginx -version
+   13  systemctl status nginx
+   14  systemctl stop nginx
+   15  systemctl status nginx
+   16  apt upgrade nginx -y
+   17  exit
+   18  pwd
+   19  exit
+   20  pwd
+   21  ls
+   22  ls -a
+   23  ll
+   24  clear
+   25  pwd
+   26  ls -a
+   27  ll
+   28  clear
+   29  ls
+   30  mkdir dir1
+   31  ls
+   32  ll
+   33  clear
+   34  ls
+   35  mkdir dir2
+   36  ls
+   37  ped
+   38  pwd
+   39  cd dir1
+   40  pwd
+   41  cd ..
+   42  pwd
+   43  clear
+   44  pwd
+   45  cd /
+   46  pwd
+   47  ls
+   48  cd home/
+   49  ls
+   50  cd ubuntu/
+   51  pwd
+   52  clear
+   53  cd ~
+   54  pwd
+   55  clear
+   56  ls
+   57  cd dir1/
+   58  pwd
+   59  ls
+   60  clear
+   61  touch file1.txt
+   62  ls
+   63  cat file1.txt
+   64  touch file2.txt file3.txt
+   65  ls
+   66  echo "Hello"
+   67  echo "Hello" >> testfile1.txt
+   68  ls
+   69  cat testfile1.txt
+   70  echo "Hello" >> file1.txt
+   71  cat file1.txt
+   72  vi samplefile1.txt
+   73  cat samplefile1.txt
+   74  clear
+   75  vi samplefile1.txt
+   76  cat samplefile1.txt
+   77  clear
+   78  cd ~
+   79  history
+   80  ls
+   81  cd dir1
+   82  ls
+   83  clear
+   84  cd ..
+   85  ls
+   86  cd dir2/
+   87  ls
+   88  cd ..
+   89  ls
+   90  mv dir2 sampledir2
+   91  ls
+   92  cd dir1/
+   93  ls
+   94  mv file1.txt dummyfile1.txt
+   95  ls
+   96  rm testfile1.txt
+   97  ls
+   98  rm -r samplefile1.txt
+   99  ls
+  100  ckear
+  101  clear
+  102  cd ..
+  103  ls
+  104  rm sampledir2/
+  105  ll
+  106  rm -rf sampledir2/
+  107  ls
+  108  cd dir1/
+  109  ls
+  110  clear
+  111  ls
+  112  rm *.txt
+  113  ls
+  114  echo "record1" >> file1.txt
+  115  cat file1.txt
+  116  echo "record1" >> file2.txt
+  117  ls
+  118  echo "record2" >> file1.txt
+  119  cat file1.txt
+  120  echo "record3" >> file1.txt
+  121  cat file1.txt
+  122  echo "dummyrecord1" > file1.txt
+  123  ls
+  124  cat file1.txt
+  125  ls
+  126  mkdir dir2
+  127  clear
+  128  ls
+  129  pwd
+  130  cd dir2
+  131  ls
+  132  cd ..
+  133  cd dir2
+  134  pwd
+  135  cd ..
+  136  pwd
+  137  ls
+  138  cp file1.txt /root/dir1/dir2
+  139  ls
+  140  cd dir2/2
+  141  cd dir2
+  142  ls
+  143  pwd
+  144  cd ..
+  145  ls
+  146  mv file2.txt /root/dir1/dir2
+  147  ls
+  148  cd dir2
+  149  ls
+  150  mv file1.txt /root/dir1/samplefile1.txt
+  151  ls
+  152  cd ..
+  153  ls
+  154  clear
+  155  ls
+  156  cd dir2/
+  157  ls
+  158  cd ..
+  159  cd dir2/
+  160  pwd
+  161  cd ..
+  162  mv samplefile1.txt /root/dir1/dir2/dummyf1.txt
+  163  ls
+  164  cd dir2/
+  165  ls
+  166  cat dummyf1.txt
+  167  ls
+  168  ll
+  169  exit
+  170  cd /home/ubuntu/
+  171  ls
+  172  exit
+  173  clear
+  174  ls
+  175  ll
+  176  exit
+  177  clear
+  178  useradd dummyuser1
+  179  su - dummyuser1
+  180  useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin
+  181  su - devopsadmin
+  182  su - dummyuser1
+  183  su - devopsadmin
+  184  passwd devopsadmin
+  185  su - dummyuser1
+  186  exit
+  187  history
+
+
+Next :::
+
+	User Management
+	
+	Access Management & Handling Remote Server 
+	
+	
+	Fundamentals of Shell Scripting!
+

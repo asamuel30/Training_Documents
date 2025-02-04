@@ -1135,3 +1135,62 @@ SHELL Scripting :::
             apt install docker.io -y
 			
 			$ ./setupmvnbuildserver.sh				# Execute the Linux Shell Scripts
+
+
+  180  useradd devopsadmin -s /bin/bash -m -d /home/devopsadmin
+  181  su - devopsadmin
+  182  su - dummyuser1
+  183  su - devopsadmin
+  184  passwd devopsadmin
+  185  su - dummyuser1
+  186  exit
+  187  clear
+  188  ls
+  189  ll
+  190  echo "rec1" >> file1.txt
+  191  ll
+  192  echo "rec1" >> test1.sh
+  193  ll
+  194  clear
+  195  ll
+  196  chmod 777 test1.sh
+  197  ll
+  198  chmod 755 test1.sh
+  199  ll
+  200  clear
+  201  su - devopsadmin
+  202  clear
+  203  history
+  204  history
+
+
+devopsadmin@ip-172-31-1-164:~$ history
+    1  pwd
+    2  exit
+    3  pwd
+    4  clear
+    5  exit
+    6  clear
+    7  ls
+    8  ls -a
+    9  exit
+   10  ls -a
+   11  ssh-keygen -t ecdsa -b 521
+   12  ls -a
+   13  cd .ssh/
+   14  ls
+   15  ll
+   16  cat id_ecdsa
+   17  cat id_ecdsa.pub
+   18  ls
+   19  cat id_ecdsa.pub > authorized_keys
+   20  ls
+   21  ll
+   22  chmod 600 /home/devopsadmin/.ssh/*
+   23  ll
+   24  clear
+   25  history
+   26  exit
+   27  docker ps
+   28  exit
+   29  history

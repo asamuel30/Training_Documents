@@ -948,3 +948,190 @@ Next :::
 	
 	Fundamentals of Shell Scripting!
 
+**********************
+Day 6 : 4th Feb. 2025 
+**********************
+
+	- User Management :::
+	
+	
+		- Created a Linux User 
+		
+			--> User Group get created automatically
+			
+			--> A Linux User can be part of many groups
+			
+			--> Get the List of Linux Users ::::
+					
+					$ cd /etc 
+					
+					$ cat passwd
+			
+			--> Get the list of Linux User Groups ::::
+			
+					$ cd /etc 
+					
+					$ cat group
+					
+					
+		apt install docker.io -y		
+		
+		docker --version
+
+		To Add Any User to a Group :
+		
+			usermod -aG <group_name> <user_name>
+		
+			usermod -aG docker devopsadmin
+			
+			
+		passwd -d <user_name>		# Delete Linux User Password
+		
+		$ su - devopsadmin
+		
+		$ rm -rf .ssh/				# Delete Linux User's SSH Key Pair
+		
+		User Profile :
+		
+			- Best Practises :
+			
+				- Passwd / ssh key  should be renewed periodically. 
+				
+				- Create ssh keys Dynamically.
+				
+		
+
+	- Handling Remote Server  ::::
+	
+		Access Management 
+		
+		Target Server or the Server Architecture 
+		
+			--> Client/Server Architecture 
+		
+		Scenario 1 :
+		
+			VM1 --> Source File1 
+			
+			VM2 --> Target Server 
+			
+		Remote Server Access :::
+		
+			AWS Cloud :
+			
+				VM1	(Server)
+				
+				VM2 (Client)
+						
+			1. Establish Connection to Remote Server  
+			2. Login to the Remote Server 
+			3. Copy the Files from one server to another server
+				using SCP
+			4. Manage the Remote Server - Install any package/Uninstall/Upgrade 
+			
+			Pre-requisites for Remote Server :::
+			
+				- Launch 2 VMs (VM1-Source & VM2-Target)
+				
+				- Ensure that Port 22 is enabled 
+				
+				- Create User in both the VMs 
+				
+				- Create SSH-Key in one server(VM1)
+				
+				- Use the public_Key as a authorized_keys in the Client Machine(VM2)
+				
+				- Establish SSH Connection & Login to VM2(Client_Machine)
+				
+				- Copy Files from VM1 to VM2(Client_Machine)
+
+
+				Client_Machine ::::
+					
+					useradd adminuser1 -s /bin/bash -m -d /home/adminuser1
+
+					su - adminuser1	
+
+					mkdir .ssh 
+
+					cd .ssh 
+
+					vi authorized_keys
+
+					#paste the id_ecdsa.pub of devopsadmin user from Server machine to authorized_keys file in Client Machine 
+
+					chmod 600 /home/adminuser1/.ssh/*
+					
+					
+					
+					SSH Connection :
+					
+						Host_Name			# 172.31.7.165		(Private IP Address of Target Server)
+						
+						User_Name 			# adminuser1		(User Name configured in Target Server)
+						
+						Credentials ()		#paste the id_ecdsa.pub of devopsadmin user from Server machine to authorized_keys file in Client Machine 
+
+	
+	
+			- From Source Server execute this Command as a devopsadmin user ::::
+			
+				ssh adminuser1@172.31.7.165
+			
+			
+			- Copy Files from VM1 to VM2(Client_Machine)	
+
+				Server Machine ::::		
+					/home/devopsadmin/sourcefile.txt 
+					
+				Client Machine ::::
+					/home/adminuser1/sourcefile.txt
+			
+				#cp  /home/devopsadmin/sourcefile.txt home/devopsadmin/dir1/
+				
+				scp /home/devopsadmin/sourcefile1.txt adminuser1@172.31.7.165:/home/adminuser1
+				
+				
+SHELL Scripting :::
+
+	Scripting Languages ?
+		- Are used to perform some process automation/validations
+		- Light-weight 
+		- Eg.: java scripts / shell scripts / yaml script / groovy / python scripts
+			(vs)
+	Progamming Language ?
+		- Are used to create some business applications 
+		- Huge Collection of Programming components
+		- Eg.: Java/.Net Framework/Python/Ruby/Cobol/C
+		
+		
+
+	- Shell Scripts are the collection of Linux Commands.
+	
+	- It is used to perform some process automation in Linux Machines.
+	
+	- Mainly used to reuse the commands and scripts.
+	
+	- Executed in parallel.
+	
+	Build Server :::
+	
+		-> Compile the Source Code, Perform Unit Testing, Create Artifacts 
+		
+			- *.java 		===> *.war / *.jar (Output)
+			
+			Tools :
+			
+				apt install git -y  
+				apt install jdk -y
+				apt install Maven -y
+				apt install docker.io -y
+				
+			$ vi setupmvnbuildserver.sh
+			
+			apt install git -y  
+	        apt install jdk -y
+		    apt install Maven -y
+            apt install docker.io -y
+			
+			$ ./setupmvnbuildserver.sh				# Execute the Linux Shell Scripts

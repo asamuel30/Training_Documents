@@ -1,0 +1,344 @@
+
+
+**********************
+Day 8 : 6th Feb. 2025 
+**********************
+
+	Fundamentals of Python :
+	
+	Application Development using Python ::
+		- Console Application
+		- Web Application
+	
+	Programming :	
+	
+	Java/C#.Net/Ruby/COBOL/C 
+			
+			
+	Shell Scripting ??
+	
+	Programming Languages 	==> Used to Develop Business Applications 
+			JAVA/Python 
+	(vs) 
+	
+	Scripting Languages 	==> Used to perform any process automation 
+			Java Script/Python 
+	
+	Use-Cases :::
+	
+		Scripting Languages :::
+		
+		
+		
+	Application :
+
+		- 3-Tier Application :
+		
+			- Front-End - User Interface(html)
+			
+			- Application Layer (Programming Language - Java/Python)
+			
+			- DataBase Layer 
+		
+		
+		Scripting Language :
+			- Java Scripts can be used for User Input Data Validation 
+			- Client Side Scripting 
+		
+		234234
+		sdfasdfs
+		
+		
+		
+		Requirement Analysis 
+		
+		Design and Document 
+		
+		Code 
+		
+		
+		
+		
+		Program / Source Code 		==> Written using High Level Language (Java/Python)
+
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	Common Features or Concepts ???
+	
+	
+	Integrated Development Environment for Python - IDLE
+	
+	Pycharm 
+	
+	Visual Studio Code 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	Validation Program :
+	
+	The User Credentials -- for login_page 
+	- Involves Database validation 
+	
+		- Programming Languages - Java/C#
+		
+	Validation Program :
+	
+		Client Side Scripting 
+		
+		- Scripting Languages 
+	
+		xxxx@yyyy.com
+		
+		xxxx 
+		
+		xxx#asdf.com 
+		
+		xxx@adfs
+		
+		
+	Tools --> 
+	
+	Logical Thinking!
+	
+	
+	Programming/Scripting Logic ????
+	
+	
+	
+	Problem Statement ::
+		- 
+		
+		What are all the steps involved to Create the program / source code?
+				
+		Analyze the Requirement 
+		Design the solution 
+			-> Algorithms 
+				- Step-by-Step process to achieve any task 
+				- Written in high-level language. It is independent of any Programming/Scripting Languages
+				- Algorithms should always be an optimized one
+				- It should be reusable and easily maintainable
+				
+			-> PsudoCode 
+				- Step-by-Step process to achieve any task
+				- It is based on the programming/Scripting Language 
+					
+			-> Program workflow - Flowcharts -- graphical views 
+			
+		Create a program/source code using actual programming/Scripting Language
+
+
+
+	var1 = 40 
+	
+	var2 = 50 	
+
+	var3 = 510 
+	
+	1. Algorithm to find the greatest of these three numbers :
+	
+	2. Calculate sum of two numbers and print the result 
+	
+		int var1;
+		int var2;
+		int var3;
+		
+		read var1;					5 				123.12		55555555555555555555555
+		
+		read var2;					5 				5			555555555555555555555555555
+		
+		var3 = var1 + var2 			10 				???			???
+		
+		print var3 
+	
+	
+	3. print *
+	
+	
+	4. print * * * * *
+	
+	5. print 
+	
+				*
+			*	*	*
+		*	*	*	*	*
+	*	*	*	*	*	*	*
+*	*	*	*	*	*	*	*	*
+
+
+	6. Print 
+	
+*
+*	*	
+*	*	*
+*	*	*	*
+*	*	*	*	*
+	
+	7. Print 
+	
+1
+
+2	2
+
+3	3	3
+
+4	4	4	4
+
+5	5	5	5	5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+	1.	
+		a = 60 
+		
+		b = 30 
+		
+		c = 87
+		
+		
+		Which is greatest number ?		result is ' c '
+		
+		Algorithm to find the greatest of these three numbers :
+		
+		
+	2.
+	
+		a = 70 
+		
+		b = 40 
+		
+		Swap the number :
+		
+		==> Output  : a = 40  & b = 70 
+		
+			a,b = b,a			# Is this valid ?
+			
+
+
+			use new variable c ?
+			
+			c = a 
+			
+			a = b 
+			
+			b = c 
+			
+	3. 
+		
+		a = *
+		
+		b = $
+		
+		Swap a and b :
+		
+		==> Output  : a = $  & b = * 	
+
+
+	4. 
+	
+		a = *
+		
+		
+		Print :
+		
+			* 
+			
+	
+	
+	5. 	a = *
+	
+		Print output :
+		
+			*
+			*	*
+			*	*	*
+			*	*	*	*
+			*	*	*	*	*
+			
+			
+	6. 	a = *
+	
+		Print output :
+		
+		*	*	*	*	*
+			*	*	*
+				*
+			*	*	*	
+		*	*	*	*	*
+		
+		
+	7. 	a = 1
+
+		Print output :
+		
+		1
+		
+		2	2
+		
+		3	3	3
+		
+		4	4	4	4
+		
+		5	5	5	5	5
+		
+		
+		
+	Working with Python :::
+
+		- Install Python 				# https://www.python.org/downloads/
+		
+		- Install IDE - Visual Studio Code 
+			
+						# https://code.visualstudio.com/download
+
+
+	Open IDLE :
+	
+	Functions :::
+	
+		-	Function is a collection of variables and commands used to perform any task.		
+		
+		>>>print("Hello")	
+			Hello 			
+			

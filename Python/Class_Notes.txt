@@ -342,3 +342,66 @@ Day 8 : 6th Feb. 2025
 		>>>print("Hello")	
 			Hello 			
 			
+			
+			
+**********************
+Day 9 : 7th Feb. 2025 
+**********************	
+
+
+	- Python Project Folder / Workspace :
+	
+	- Workspace is a the collection of project files and components 
+		- src_code 
+		- test 
+		- appln_properties 
+			
+			
+			*.py			- Extension of Python Program 
+			
+			
+		1. Install Python 
+		
+		2. Install Visual Studio Code 
+		
+		3. Install Python extension for Visual Studio Code
+		
+	
+	Python Console Applications :	
+		
+		- Open/Create Project Folder for VS Code
+		
+		- Create *.py programs 
+		
+		- Execute using Terminal 
+		
+			
+	Python Web Applications :	
+		
+		- Open/Create Project Folder for VS Code
+		
+		- Create *.py programs 
+		
+		- Setup Web Application Framework - flask/Django
+		
+		- Execute using Terminal and Web Browser		
+		
+		
+		
+		Address:
+		
+			addr1
+			addr2
+			addr3 
+			
+			
+			addr1 = "single line input string of chars"
+			
+			
+			addr2 = '''Multiple lines input string of chars'''
+			
+			
+			
+	
+		
+	

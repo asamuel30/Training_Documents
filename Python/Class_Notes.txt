@@ -402,6 +402,105 @@ Day 9 : 7th Feb. 2025
 			
 			
 			
+			
+************************
+Day 10 : 10th Feb. 2025 
+************************	
+
+
+		- Python Console Applications
+			
+			-> Desktop Application 
+		
+		- Python Web Applications 		-- E_Commerce 
+	
+			-> Web Application Server 
+			
+					-> flask/Django WAS			# For Python Web Applications 
+					
+			-> Tomcat Web Application Server 	# Java based Web Applications
+		
+			-> httpd / nginx 
+			
+			
+			-> Python Project :
+			
+					*.py 						# Business Logic 
+					
+					Web Components Resources 
+					
+					templates 					# Front_End
+						*.html 
+						*.css 
+						*.js
+					
+			
+	1. Python web application :
+		
+		Open Visual Studio Code 
+		Create Project Folder :
+				
+##################################
+
+Folder Structure :
+
+	My-WebApp-Project
+		app.py
+		templates
+			sample.html
+			
+##################################
+			
+		Open New Terminal :			
+			
+			Install : 	Web Application Framework
+				pip install flask
+		
+			Create app.py 
+		
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+
+def sample():
+	return render_template("sample.html")
+
+if "__name__" == "__main__":
+	app.run(debug=True)	
+	
+	
+		Create "templates" folder at root level :::
+				Create Html files :: eg. sample.html 
+				
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>www.loksaieta.com</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="jumbotron" style="background-color:white">
+	  <img src="https://octodex.github.com/images/spidertocat.png" alt="Spidertocat"
+		   class="img-responsive center-block" style="width:250px"/>
+	  <h2 class="text-center">Hello Everyone</h2>
+	  <p class="text-center"> Python Demo...</p>
+  </div>
+</body>
+</html>	
+
+
+		set FLASK_APP=sample
+	
+		python -m flask run	
+		
+					
+			
+Next ::::
+
+	Version Control System using GIT/Github ::::			
 	
 		
 	

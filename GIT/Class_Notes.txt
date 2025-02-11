@@ -1,0 +1,288 @@
+			
+************************
+Day 11 : 11th Feb. 2025 
+************************	
+
+	Version Control System using GIT/Github :::
+	
+		Continuous Development ::
+		
+		
+		index.html 
+		
+		<html>
+		---
+		--
+		--
+		---
+		---
+		-
+		</html>
+		
+		save index.html 	test 
+		
+		edit index.html 
+
+		<html>
+		---
+		--
+		-----
+		---@@@
+		---@@@
+		----
+		--
+		-
+		-
+		-----
+		---
+		--
+		</html>	
+		
+		save index.html 	test 
+
+		Version Control System 
+		
+			-> It is used to Version Control the Changes in files. 
+			-> It is used to Track the File Changes.
+		
+		index.html 
+		
+		<html>
+		---
+		--
+		--
+		---
+		---
+		-
+		</html>	
+		
+		
+		save index.html					index.html_V1.0			# V1.0 is the tag/version_number/Commit_id
+		
+		edit index.html 
+
+		<html>
+		---
+		--
+		-----
+		---@@@
+		---@@@
+		----
+		--
+		-
+		-
+		-----
+		---
+		--
+		</html>	
+		
+		save index.html					index.html_V1.1			# V1.1 is the tag/version_number/Commit_id
+		save index.html					index.html_V1.2	
+		save index.html					index.html_V1.3	
+		save index.html					index.html_V1.4	
+		save index.html					index.html_V1.5
+
+
+
+	Version Control System 
+	
+		-> It is used to Version Control the Changes in files. 
+		-> It is used to Track the File Changes.
+			
+		Types of Version Control System :::
+		
+			1. Local VCS 
+					- It is used only in a Local machine
+					- Cannot possible to share the source code repositories to other.
+					
+			2. Centralized VCS
+					- The Source Code Repositories and maintained in a central server.
+					- Users should have valid access and should be Online to access the files from Centralized VCS.
+					- If Users are offline / If the central server is down, then we cannot access the files. 
+					- Users will not have any Copy of files in the local machine.
+					
+			3. Distributed VCS ::
+					- The Source Code Repositories are maintained in a Remote Servers.
+					- Users should have valid access remote Repositories.
+					- If Users can work offline.
+					- Copy of Files can be stored in the local machine.					
+			
+		GIT :::
+		
+			It is a Open-Source Distributed Version control System.
+			It is used to version control the Changes 
+			It is used to Track the Changes
+			It is used to perform Parallel Development
+				Parallel Development can be achieved using Branching Techniques. 
+
+	Working with Distributed VCS - GIT/Github :::	
+	
+		- Install git Client in the Local Machine 
+		
+		- Remote Repository Server :
+		
+				GITHUB 	- is one of the Remote Repositories
+				GITLAB 
+				AZURE Repo 
+				AWS Code Commit 
+				BitBucket 
+				
+	Working with GIT :
+	
+	- GIT File Workflow 
+	- GIT Cli Command 
+	- GIT Branching Techniques
+	- Handling Remote Github Repositories
+	
+	
+
+	- GIT File Workflow :: 60%
+	
+	
+	Distributed VCS :
+	
+	
+	Local Machine 																		Remote Server 
+	
+	
+	Working Directory			Staging_Area				Local-Repository 				Remote-Repository
+	
+	
+	index.html------------------>index.html----------------->index.html_v1.0---------------->index.html_v1.0
+					git add 					git commit						git push
+	index.html------------------>index.html----------------->index.html_v1.1---------------->index.html_v1.1
+					git add 					git commit						git push
+	index.html------------------>index.html----------------->index.html_v1.2---------------->index.html_v1.2
+					git add 					git commit						git push
+	index.html------------------>index.html----------------->index.html_v1.3---------------->index.html_v1.3
+					git add 					git commit						git push
+	index.html------------------>index.html----------------->index.html_v1.4---------------->index.html_v1.4
+					git add 					git commit						git push
+	
+	
+	Developer ::
+	
+		Developers' Workload :
+		
+		- Enhancement Projects / Bugfixing Projects 
+
+		- New Project 
+		
+		
+
+
+	GIT Cli Commands :
+	
+	
+	- git clone				# To Copy/Clone the entire Remote Repository to Local Machine
+	
+	- git add 				# To Add the Changes from working directory to staging area 
+	
+	- git commit 			# To Commit the Changes from Staging_Area to Local Repository
+	
+	- git push				# To Push the Changes from Local Repository to Remote-Repository
+	
+	- git fetch/git pull :
+	
+			- Both git fetch and git pull are used to handle the incremental changes from Remote-Repository 
+	
+			- git Fetch :
+					- It is used to check for the incremental changes in the remote repository, if there is any incremental changes exist, it will just update the details about the changes only in the Local Repository Not in the Working Directory.
+					
+					Using git Merge we can update the working directory from local repository
+					
+			- git Pull :
+					- It is used to check for the incremental changes in the remote repository, if there is any incremental changes exist, it will update the details about the changes in the Local Repository as well in the Working Directory.	
+
+					git pull = git fetch + git merge 					
+					
+	- git init 				# To initialize a Local Repository	
+	
+	- Fork 					# To Copy a remote repository to another remote repository
+	
+	
+	
+	Remote Repository :
+	
+		index.html 		--> 10 Lines of Code 
+		
+						--> 10 KB 
+						
+							20KB	20 Lines		==> Push to Remote Repos 
+						
+						
+	 git clone :
+	 
+		
+		Local Machine ==> 10 KB - 10 Lines 
+		
+							+ 10Lines 
+							
+							20KB			==> Push to Remote Repos 
+							
+
+	Install GIT :::
+	
+		https://git-scm.com/downloads
+		
+		git --version 		
+		
+		Windows Machine :
+		
+			- GIT BASH  --> Based on Linux Bash Shell   ********
+			- GIT CMD 	--> Based on Windows PowerShell 
+			- GIT GUI 	--> GUI Tool 
+			
+	
+	Working with GIT Local Repositories using GIT Client :::
+	
+		git --version
+		
+		Project Folder/Directory :
+		
+		
+			d: 
+			
+			cd d:
+			
+			mkdir Paperlive-Projects 
+			
+			cd Paperlive-Projects
+			
+			mkdir Repo1 
+			
+			mkdir Repo2 
+			
+			mkdir Repo3 
+			
+			cd Repo1
+			
+			git init 
+			
+		
+			git init 
+			
+				- git init				# 	To initialize the git repository 
+											Create .GIT Directory 
+											Create Default Branch - master branch.
+			
+			git status					# Get the current status of local repository
+		
+	
+	
+	Local Machine 																
+	
+	
+	Working Directory			Staging_Area				Local-Repository
+	
+	
+	file1.txt------------------> <file1.txt> -----------------> file1.txt_v1.0
+	
+					git add 					git commit 
+					
+					
+			git add file1.txt 
+			
+			git commit -m "Created file1.txt"
+			
+			git log 

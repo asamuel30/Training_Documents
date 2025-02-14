@@ -724,4 +724,466 @@ Next:
 	
 	
 	
+
+
+************************
+Day 13 : 14th Feb. 2025 
+************************
+
+
+	git commit :::
 	
+		git commit -m "Commit_Message"
+		
+		Best Practises :
+		
+		
+			- Commit Message should be relevant to the Changes. 
+			
+			Project_ID 
+			
+			Change_Request_Number 
+			
+			
+			git commit -m "CR-1001 Updated Payment_Script"
+			
+			git commit -m "CR-1002 Updated Loan_Script"			
+
+			git commit -m "Proj-202502 Updated Payment_Script"
+			
+			
+			Commits --> 
+			
+				git commit -m "asdfasfd" 
+				
+				git commit --amend -m "Valid_Commit_Message"
+				
+			cm3			Latest --> --amend 	
+			cm2
+			cm1
+	
+	
+	
+	GIT IGNORE :::
+	
+	
+		-> Is used to ignore the files from tracking! 
+		-> If you don't want git to track any file, just create .gitignore file and save the file names/fiel name patterns.
+		
+		-> As a best Practises - .gitignore file should be the initial commit for any repository
+		
+		
+		Project Components :
+		
+		
+		Project Workspace/Folder :::
+		
+		Python_Project_Folder 
+		
+			app.py 
+			templates
+				index.html 
+		
+		
+		
+		vi .gitignore file
+		
+			*.war
+			DBase_UserName 
+			DBase_Password 
+			DB_Secret.json	
+		
+		
+		Local Machine :
+		
+																								Push
+		Working Directory 			----> 	Staging_Area		---->	Local_Repository 	====================> 	Remote_Repository 
+		
+		Java_Maven_Project_Folder 
+		
+			src 
+				main 
+					*.java
+				test 
+					*.java 
+			target 
+				*.war
+				*.jar 
+			application.properties 
+			*.doc
+			DBase_UserName 
+			DBase_Password 
+			DB_Secret.json
+		
+	
+		git reset :
+		
+					Repo :
+						CM4 			# Have the Extracted data 
+						CM3 			# Have the Extracted data 
+						CM2 			# Have the Extracted data 					
+						CM1 			# Have the Extracted data 
+						Initial_Commit	# .gitignore	
+		
+		
+			git reset --hard Initial_Commit
+		
+					Repo :
+						Initial_Commit	# .gitignore	
+						
+						
+	GIT Branching Techniques :::
+	
+		- Git Branches are used to independently work on any changes 
+		- Git Branches are used to perform parallel development 
+		
+		In Distributed VCS, Branches are used to perform parallel Development 	
+		
+		Default Branch - master - is considered as a production version of source code.	
+		
+	
+	GIT Branching Strategies :::
+	
+		--> Used to perform parallel development without impacting the integrity of the master branch
+		
+	GIT Branching Strategies :::
+	
+	
+	Scenario 1:	--> single user and single feature 
+	
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+				
+	Scenario 2: --> single user with single feature 
+		
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+				
+						cm1,cm2,cm3,f1cm1,f1cm2,f1cm3			# Upon Merging from feature_branch1
+				
+	
+					feature_branch1 - cm1,cm2,cm3,f1cm1,f1cm2,f1cm3			file1.txt
+					
+						git merge feature_branch1
+				
+
+	
+	
+	Scenario 3: --> single user with multiple features 
+	
+
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+
+					Developer1_Branch - cm1,cm2,cm3
+										- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+					
+						feature_branch1 - cm1,cm2,cm3
+										- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+						
+						feature_branch2 - cm1,cm2,cm3
+										- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+	
+
+
+	Scenario 4: --> Multiple users with multiple features 
+	
+
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+						cm1,cm2,cm3,cm4									# cm4 is the integration of Developer1&2 Changes		
+				
+					Integration_Branch - cm1,cm2,cm3 
+										- cm1,cm2,cm3,Developer1-Changes,Developer2-Changes					
+
+						Developer1_Branch - cm1,cm2,cm3
+											- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+						
+							feature_branch1 - cm1,cm2,cm3
+											- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+							
+							feature_branch2 - cm1,cm2,cm3
+											- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+
+						Developer2_Branch - cm1,cm2,cm3
+											- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+						
+							feature_branch1 - cm1,cm2,cm3
+											- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+							
+							feature_branch2 - cm1,cm2,cm3
+											- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+											
+
+	Scenario 5:	
+
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+					- cm1,cm2,cm3,cm4									# cm4 is the integration of Team1&Team2 Changes 
+				
+					Release_Branch - cm1,cm2,cm3
+									cm1,cm2,cm3,Team1-Changes,Team2-Changes	
+				
+						Integration_Branch1 - cm1,cm2,cm3 												# Team1					
+											- cm1,cm2,cm3,Developer1-Changes,Developer2-Changes					
+
+							Developer1_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+
+							Developer2_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+												
+						Integration_Branch2 - cm1,cm2,cm3 												# Team2				
+											- cm1,cm2,cm3,Developer1-Changes,Developer2-Changes					
+
+							Developer1_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+
+							Developer2_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+												
+												
+	Working with Git Branches :::
+	
+	Create Branch :
+	
+		git branch 								# List the branches 
+		
+		git branch <New_Branch_Name>			# Create a branch  
+		
+		git switch -c <New_Branch_Name>			# Create a branch & Switch to New Branch
+		
+		git switch <existing_Branch_Name>		# Switch to specific
+		
+		
+		
+		git init 
+		
+		git branch feature1 
+		
+		git branch feature2
+		
+		git switch feature1 
+		
+		Repo1 :
+		
+			master ==> cm1 
+			
+			
+			
+				feature1  -->	cm1
+								cm1,f1cm1 
+								
+						git switch master 
+						
+						git merge feature1				# Merge Command should be executed from target branch
+					
+				
+				feature2  -->   cm1
+				
+				
+	 Merge Conflict :
+	 
+	 
+		--> 	When we try to merge the change from more than once feature/user into the same file at the same record level to the target branch 
+		
+		
+	Handle / Fix Merge Conflict :
+	
+		--> Identify the file(s) causing the merge conflict 
+		
+		--> Open and Review the File Content 
+		
+		--> Decide which feature/user changes to be retained or removed from that file 
+		
+		--> Edit the file, delete the header and footer lines, update and save the file content accordingly 
+		
+		--> Perform GIT ADD and Commit the Changes in Target Branch.
+		
+	
+	
+	DevOps Perspectives :
+	
+		--> Prevent Merge Conflict :::
+		
+				- With Proper collaboration and review before merge.
+
+  835  mkdir testrepo1
+  836  clear
+  837  cd testrepo1/
+  838  clear
+  839  git init
+  840  echo "rec1" >> f1.txt
+  841  git add .
+  842  git commit -m "asdfasdf"
+  843  clear
+  844  git log
+  845  git commit -m "Created f1.txt"
+  846  git log --oneline
+  847  ls
+  848  git commit --amend -m "Created f1.txt"
+  849  git log --oneline
+  850  clear
+  851  git log
+  852  ls
+  853  clear
+  854  cd ..
+  855  mkdir testrepo2
+  856  clear
+  857  cd testrepo2/
+  858  git init
+  859  git status
+  860  ls -a
+  861  vi .gitignore
+  862  cat .gitignore
+  863  git status
+  864  git add .
+  865  git commit -m "Initial Commit for .gitignore"
+  866  clear
+  867  ls
+  868  ls -a
+  869  cat .gitignore
+  870  echo "rec1" >> file1.java
+  871  ls
+  872  git status
+  873  echo "rec1" >> sample.txt
+  874  ls
+  875  git status
+  876  echo "rec1" >> s1.doc
+  877  git status
+  878  ls
+  879  git add .
+  880  ls
+  881  git status
+  882  git commit -m "Created file1.java"
+  883  git status
+  884  ls
+  885  git ls-files
+  886  clear
+  887  git branch
+  888  git branch
+  889  git branch feature1
+  890  git branch
+  891  git switch -c feature2
+  892  git branch
+  893  git switch master
+  894  git branch
+  895  git branch
+  896  git switch feature3
+  897  git log --oneline
+  898  ls
+  899  clear
+  900  cd ..
+  901  ls
+  902  mkdir testrepo3
+  903  cd testrepo3
+  904  git init
+  905  clear
+  906  git status
+  907  ls
+  908  git branch
+  909  echo "rec1" >> file1.txt
+  910  git add .
+  911  git commit -m "CM1"
+  912  clear
+  913  ls
+  914  git branch
+  915  git log --oneline
+  916  git status
+  917  ls
+  918  git branch feature1
+  919  git branch
+  920  git log --oneline
+  921  ls
+  922  cat file1.txt
+  923  git switch feature1
+  924  git log --onelne
+  925  git log --oneline
+  926  ls
+  927  cat cat file1.txt
+  928  cat file1.txt
+  929  clear
+  930  git switch master
+  931  clear
+  932  git branch
+  933  git branch feature2
+  934  git log --oneline
+  935  ls
+  936  git switch feature1
+  937  git log --oneline
+  938  ls
+  939  cat file1.txt
+  940  echo "rec2 from feature1" >> file1.txt
+  941  git status
+  942  git add .
+  943  git commit -m "f1cm1"
+  944  cat file1.txt
+  945  git status
+  946  git log --oneline
+  947  git switch master
+  948  git log --oneline
+  949  cat file1.txt
+  950  git switch feature1
+  951  ls
+  952  cat file1.txt
+  953  clear
+  954  git log --oneline
+  955  cat file1.txt
+  956  git switch master
+  957  git log --oneline
+  958  cat file1.txt
+  959  git merge feature1
+  960  git log --oneline
+  961  cat file1.txt
+  962  git switch feature2
+  963  cat file1.txt
+  964  git log --oneline
+  965  echo "rec2 from feature2" >> file1.txt
+  966  git add .
+  967  git commit -m "f2cm1"
+  968  git log --oneline
+  969  git switch master
+  970  cat file1.txt
+  971  git log --oneline
+  972  git merge feature2
+  973  git log --oneline
+  974  clear
+  975  git status
+  976  cat file1.txt
+  977  vi file1.txt
+  978  git add .
+  979  git commit -m "Fixed Merge Conflict"
+  980  cat file1.txt
+  981  git log --oneline
+  982  clear
+  983  cd ..
+  984  history

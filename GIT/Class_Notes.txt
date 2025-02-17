@@ -1187,3 +1187,424 @@ Day 13 : 14th Feb. 2025
   982  clear
   983  cd ..
   984  history
+
+
+				
+************************
+Day 14 : 17th Feb. 2025 
+************************
+
+	GIT Way of preventing Merge Conflicts in target branch!
+	
+	GIT REBASE :
+	
+		git rebase ::::
+		
+			- Used to maintain the linear commit history.
+			- Used to Sync the current branch with the target branch.
+			- Used to prevent merge conflicts in the target branch.
+			
+			- As a best practise it is always recommended to use rebase before merge!
+			
+		Repo1 :
+		
+			master - cm1,cm2 
+			
+					- cm1,cm2,f1cm1,f1cm2,f1cm3							# Upon merging feature1 
+					
+					- cm1,cm2,f2cm1,f2cm2,f2cm3,f1cm1,f1cm2,f1cm3		# Upon merging feature2 branch without rebase 
+			
+					- cm1,cm2,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3		# Expected Linear Commit history 
+																		# Upon merging feature2 branch with proper rebase
+			
+				feature1 - cm1,cm2
+				
+						- cm1,cm2,f1cm1,f1cm2,f1cm3
+						
+						git switch master 						
+						git merge feature1 		
+				
+				
+				feature2 - cm1,cm2
+				
+						- cm1,cm2,f2cm1,f2cm2,f2cm3
+						
+						git rebase master 					# Should be executed from current branch						
+						
+						- cm1,cm2,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3						
+						
+						git switch master 
+						
+						git merge feature2 			
+		
+		
+		
+	- GIT SQUASH Option :		
+	
+		- Git Squash Option is used to combine more than one commits into single commit point.
+	
+		Repo1 :
+		
+			master - cm1,cm2 		
+			
+					cm1,cm2,f1cm1,f1cm2,f1cm3,.....................,f1cm500			# Upon merging feature1 
+					
+					cm1,cm2,cm3								# Upon merging feature1 using --squash option 
+															# cm3 is the combination of feature1 commits
+			
+				feature1 - cm1,cm2,f1cm1,f1cm2,f1cm3,.....................,f1cm500		
+				
+					git switch master 
+					
+					git merge --squash feature1
+					
+					git commit -m "New Commit_Message"
+					
+	   Scenario 5:	
+
+		--> Repo1 :
+		
+				master - cm1,cm2,cm3
+					- cm1,cm2,cm3,cm4									# cm4 is the integration of Team1&Team2 Changes 
+				
+					Release_Branch - cm1,cm2,cm3
+									cm1,cm2,cm3,Team1-Changes,Team2-Changes	
+				
+						Integration_Branch1 - cm1,cm2,cm3 												# Team1					
+											- cm1,cm2,cm3,Developer1-Changes,Developer2-Changes					
+
+							Developer1_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+
+							Developer2_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+												
+						Integration_Branch2 - cm1,cm2,cm3 												# Team2				
+											- cm1,cm2,cm3,Developer1-Changes,Developer2-Changes					
+
+							Developer1_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+
+							Developer2_Branch - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3	
+							
+								feature_branch1 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f1cm1,f1cm2,f1cm3
+								
+								feature_branch2 - cm1,cm2,cm3
+												- cm1,cm2,cm3,f2cm1,f2cm2,f2cm3	
+					
+		
+	- GIT Cherry-Pick :		
+			# Used to Merge specific commit(s) to the target branch 
+			# As per best practise, it is NOT recommended to use cherry-pick!
+	
+	
+		git merge feature1 		
+		
+		git cherry-pick <commit_id>
+		
+		git cherry-pick <commit_id1> <commit_id1>
+		
+	
+	
+	- GIT Stash ::::
+	
+		--> Is used to save the uncommitted changes to the temporary area.
+		
+		Repo 1:
+		
+			master - cm1,cm1 
+			
+				feature1 :
+				
+				feature2 :
+				
+				
+			git stash save "Stash Message"		# Create Stash entry in the Stash list 
+			
+			git stash list 						# Used to get the list stash entries 
+			
+			
+			git stash apply 					# Used to Apply/Copy the latest entry from the stash list to staging area
+			
+			git stash apply stash@{2}			# Used to Apply/Copy a specific entry from the stash list to staging area
+			
+			git stash drop						# Used to delete the latest entry from the stash list			
+			
+			git stash drop stash@{2}			# Used to delete a specific entry from the stash list		
+		
+			git stash pop						# Used to apply the latest entry from the stash list to staging area
+												# Delete the  latest entry from the stash list
+						
+			git stash pop stash@{2}				# Used to apply a specific entry from the stash list to staging area
+												# Delete a specific entry from the stash list
+												
+			git stash clear						# Clean-up the Stash list 
+			
+			
+			
+	
+	
+	- Remote Repositories :
+	
+		Work with Remote and Local Repositories 
+		
+		Developers' Workload :
+		
+		- Enhancement Projects / Bugfixing Projects 
+
+		- New Project 	
+
+
+		GIT CLI Commands :
+		
+			- git clone				# To Copy/Clone the entire Remote Repository to Local Machine
+			
+			- git add 				# To Add the Changes from working directory to staging area 
+			
+			- git commit 			# To Commit the Changes from Staging_Area to Local Repository
+			
+			- git push				# To Push the Changes from Local Repository to Remote-Repository
+			
+			- git fetch/git pull :
+			
+					- Both git fetch and git pull are used to handle the incremental changes from Remote-Repository 
+			
+					- git Fetch :
+							- It is used to check for the incremental changes in the remote repository, if there is any incremental changes exist, it will just update the details about the changes only in the Local Repository Not in the Working Directory.
+							
+							Using git Merge we can update the working directory from local repository
+							
+					- git Pull :
+							- It is used to check for the incremental changes in the remote repository, if there is any incremental changes exist, it will update the details about the changes in the Local Repository as well in the Working Directory.	
+
+Next ::
+				
+	Handling Remote-Repositories :::		
+				
+		- Enhancement Projects / Bugfixing Projects 
+		
+			- Create a Remote git repository :
+			
+				- Github Account
+
+
+  501  cd d:
+  502  cd paperlive-projects/
+  503  ls
+  504  clear
+  505  ls
+  506  mkdir demorepo1
+  507  celar
+  508  clear
+  509  cd demorepo1/
+  510  clear
+  511  git init
+  512  echo "rec1" >> f1.txt
+  513  git add .
+  514  git commit -m "cm1"
+  515  echo "rec1" >> f2.txt
+  516  git add .
+  517  git commit -m "cm2"
+  518  clear
+  519  git log --oneline
+  520  ls
+  521  git status
+  522  git branch feature1
+  523  git branch feature2
+  524  git switch feature1
+  525  clear
+  526  git log --oneline
+  527  echo "rec1" >> s1.txt
+  528  git add .
+  529  git commit -m "f1cm1"
+  530  echo "rec1" >> s2.txt
+  531  git add .
+  532  git commit -m "f1cm2"
+  533  echo "rec1" >> s3.txt
+  534  git add .
+  535  git commit -m "f1cm3"
+  536  clear
+  537  git log --oneline
+  538  git rebase master
+  539  git switch master
+  540  git merge feature1
+  541  git log --oneline
+  542  ls
+  543  git switch feature2
+  544  git log --oneline
+  545  echo "rec1" >> q1.txt
+  546  git add .
+  547  git commit -m "f2cm1"
+  548  echo "rec1" >> q2.txt
+  549  git add .
+  550  git commit -m "f2cm2"
+  551  echo "rec1" >> q3.txt
+  552  git add .
+  553  git commit -m "f2cm3"
+  554  echo "rec1" >> q4.txt
+  555  git add .
+  556  git commit -m "f2cm4"
+  557  git log --oneline
+  558  git rebase master
+  559  git log --oneline
+  560  git rebase master
+  561  git switch master
+  562  git log --oneline
+  563  git merge feature2
+  564  git log --oneline
+  565  ls
+  566  git switch feature1
+  567  git log --oneline
+  568  ls
+  569  git rebase master
+  570  git log --oneline
+  571  clear
+  572  git status
+  573  git log --oneline
+  574  clear
+  575  echo "rec1" >> l1.txt
+  576  git add .
+  577  git commit -m "f1commit1"
+  578  echo "rec1" >> l2.txt
+  579  git add .
+  580  git commit -m "f1commit2"
+  581  echo "rec1" >> l3.txt
+  582  git add .
+  583  git commit -m "f1commit3"
+  584  echo "rec1" >> l4.txt
+  585  git add .
+  586  git commit -m "f1commit4"
+  587  echo "rec1" >> l5.txt
+  588  git add .
+  589  git commit -m "f1commit5"
+  590  clear
+  591  git log --oneline
+  592  git rebase master
+  593  git switch master
+  594  git merge --squash feature1
+  595  git status
+  596  git commit -m "Create l*.txt files"
+  597  git log --oneline
+  598  ls
+  599  git show 49bc7df
+  600  clear
+  601  git status
+  602  cd ..
+  603  mkdir demorepo2
+  604  cd demorepo2/
+  605  git init
+  606  clear
+  607  git status
+  608  echo "rec1" >> q1.txt
+  609  git add .
+  610  git commit -m "Created q1.txt"
+  611  cleatr
+  612  clear
+  613  git switch -c feature1
+  614  git log --oneline
+  615  ls
+  616  echo "rec1" >> w1.txt
+  617  echo "rec2" >> w1.txt
+  618  echo "rec3" >> w1.txt
+  619  git add .
+  620  clear
+  621  ls
+  622  git status
+  623  git switch master
+  624  git status
+  625  git switch feature1
+  626  ls
+  627  git status
+  628  git stash list
+  629  git stash save "for w1.txt"
+  630  git stash list
+  631  git status
+  632  ls
+  633  git stash list
+  634  echo "rec1" >> w2.txt
+  635  git add .
+  636  echo "rec1" >> w3.txt
+  637  git stash save "for w2.txt"
+  638  ls
+  639  git status
+  640  git add .
+  641  git stash save "for w3.txt"
+  642  git stash list
+  643  echo "rec1" >> w4.txt
+  644  git add .
+  645  git stash save "for w4.txt"
+  646  git stash list
+  647  ls
+  648  git status
+  649  git switch master
+  650  ls
+  651  git status
+  652  git switch feature1
+  653  ls
+  654  git stash list
+  655  git stash apply
+  656  git status
+  657  ls
+  658  git commit -m "created w4.txt"
+  659  git status
+  660  ls
+  661  git stash list
+  662  git stash drop
+  663  git stash list
+  664  ls
+  665  git stash pop
+  666  git status
+  667  git stash list
+  668  clear
+  669  git status
+  670  git stash list
+  671  git stash save "for w3.txt"
+  672  echo "rec1" >> d1.txt
+  673  git add .
+  674  git stash save "for d1.txt"
+  675  echo "rec1" >> d2.txt
+  676  git add .
+  677  git stash save "for d2.txt"
+  678  echo "rec1" >> d3.txt
+  679  git add .
+  680  git stash save "for d3.txt"
+  681  clear
+  682  git stash list
+  683  git status
+  684  ls
+  685  git stash apply stash@{2}
+  686  git commit -m "created d1.txt"
+  687  git status
+  688  git stash list
+  689  git stash drop stash@{2}
+  690  git stash list
+  691  git stash pop stash@{2}
+  692  git stash list
+  693  git stash clear
+  694  git stash list
+  695  clear
+  696  cd ..
+  697  clear
+  698  history
+
+

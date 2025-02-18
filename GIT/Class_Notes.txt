@@ -1608,3 +1608,170 @@ Next ::
   698  history
 
 
+
+
+************************
+Day 15 : 18th Feb. 2025 
+************************
+
+	Handling Remote-Repositories :::		
+				
+	- Enhancement Projects / Bugfixing Projects 
+		
+			- Create a Remote git repository :
+			
+				- Github Account
+				
+	
+	
+	Remote GIT Repos :		
+	
+		- With GUI based access
+		- Very user Friendly
+	
+		github 
+		gitlab 
+		bitbucket 
+		azure repos 
+		aws code commit
+	
+		GITHUB : 
+		
+			- Create Remote GitHub Repository
+			
+			- Create Commit in Remote Repo 
+			
+			- Create Branches in Remote Repository
+			
+				- Merge the Changes to Target Branch 
+				
+					==> Pull Request 
+					
+							- Will be created by the Developers and submitted to the Reviewer/Approver 
+							
+							- Once the Pull Request is approved, then only the changes can be merged into target branch
+		
+	
+	git clone https://github.com/PaperLive-DevOps-Jan25/TestRepo1.git
+	
+	
+	git remote -v 							# Get the list of remote repositories linked to the local repository
+	
+	
+	git push -u origin localfeature1		# Push the Changes from localfeature1 to remote repo
+											# If localfeature1 branch is not present in remote repo, it will create one.
+											# -u denotes the credentials required to push the changes to remote repository.
+													- User_Name 
+													- Github Access Token 
+													
+	Create an Acccess Token in Github Account.
+
+		- loksaieta
+		
+		- mjhgkbkjkjnkjnjhvjhvjhvj
+		
+		
+	- Use git pull to keep the local repository branch in-sync with remote repository branch
+	
+	
+	
+	New Project from Local Machine :
+	
+		- Create a Local Repo with some commits
+		
+		- Create an empty Remote Repository 
+		
+		
+		- git remote add origin <remote_repo_url>
+		
+			git remote add origin https://github.com/PaperLive-DevOps-Jan25/TestRepo2.git
+			
+			git remote remove origin		# Detach the remote repository link from local repository
+		
+		- git push command 
+		
+		
+		
+	Access Github Repos using Visual Studio Code :::
+
+ 701  mkdir remoterepos
+  702  cd remoterepos/
+  703  clear
+  704  git clone https://github.com/PaperLive-DevOps-Jan25/TestRepo1.git
+  705  ls
+  706  cd TestRepo1/
+  707  ls
+  708  cat file1.txt
+  709  clear
+  710  git log --oneline
+  711  clear
+  712  git log --oneline
+  713  clear
+  714  git log --oneline
+  715  git remote -v
+  716  git status
+  717  clear
+  718  ls
+  719  git branch
+  720  git status
+  721  git switch -c localfeature1
+  722  git log --oneline
+  723  git status
+  724  ls
+  725  echo "rec1" >> local-file1.txt
+  726  git add .
+  727  git commit -m "Created Local-File1.txt"
+  728  git log --oneline
+  729  git push -u origin localfeature1
+  730  clear
+  731  git switch main
+  732  clear
+  733  git log --oneline
+  734  ls
+  735  git status
+  736  git fetch
+  737  git log --oneline
+  738  git status
+  739  ls
+  740  git pull
+  741  git status
+  742  git log --oneline
+  743  ls
+  744  ls
+  745  git pull
+  746  ls
+  747  clear
+  748  cd ..
+  749  clear
+  750  mkdir testrepo2
+  751  cd testrepo
+  752  cd testrepo2/
+  753  git init
+  754  clear
+  755  echo "rec1" >> f1.txt
+  756  git add .
+  757  git commit -m "created file1.txt"
+  758  git remote -v
+  759  git remote add origin https://github.com/PaperLive-DevOps-Jan25/TestRepo2.git
+  760  git remote -v
+  761  git branch -M main
+  762  git branch -M master
+  763  git push -u origin master
+  764  clear
+  765  git remote -v
+  766*
+  767  git remote -v
+  768  git remote add origin https://github.com/PaperLive-DevOps-Jan25/TestRepo2.git
+  769  git remote -v
+  770  git remote add azorigin https://github.com/PaperLive-DevOps-Jan25/TestRepoaz2.git
+  771  git remote -v
+  772  clear
+  773  cd ..
+  774  history
+
+	
+Next ::::
+
+	Fundamentals of Application Build Tool - Maven 
+	
+	Jenkins 

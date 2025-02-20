@@ -1,0 +1,61 @@
+************************
+Day 16 : 20th Feb. 2025 
+************************
+
+	Overview of Jenkins :::
+
+
+		Jenkins is an Open-Source Build Orchestration Tool.
+		
+		
+		- Archetecture of Jenkins :
+		
+		
+			- Based on Master/Slave Archetecture
+			
+				Jenkins_Master Node  (VM)			==> Is used create Jenkins Projects/Pipelines Jobs to Automate the process.
+														Is used to schedule the builds in the Jenkins Slave Nodes.
+														
+					Jenkins_Slave Node (VM)			==> Used of Perform Application Build 
+
+
+	Build Orchestration Tool - Jenkins
+	
+	Jenkins :::
+	
+	Continuous Development & Continuous Integration ::::
+	
+		Using DevOps Approach ::
+			Developers :
+			-- Create Application Source Code 
+			-- Commit the Source Code to Source Code Repository like github
+			
+			Using DevOps Process :
+			Automate ::
+
+			- Build the code - Compile and create artifacts 					
+			- Unit Testing 					
+			- Promote the Application to higher testing Environment					
+			- Notify the Testing/Development Team 	
+
+		Tools :::
+		
+			- Eclipse based IDEs - like Eclipse for Java,Pycharm,Intellij, Visual Studio, Visual Studio Code
+			- Source Code Management Tool - like github/AWS Code Commit/Azure Repos 
+			- Jenkins/AzurePipeline/AWS CodeBuild/gitlab-ci			
+		
+	What is Jenkins :::
+	
+		Jenkins is Open-Source Build Orchestration Tool.
+		Used to Automate the End-to-End Application Build and Deployments
+		Using Jenkins we can create CI/CD Pipelines 
+		
+	Jenkins Architecture ::
+	
+		Jenkins is based on Master-Slave Architecture :::
+		
+			Jenkins_Master (VM)				==> Install Jenkins - To Create Jenkins CI/CD Pipeline Jobs/Projects
+				Jenkins_SlaveNode1 (VM)		==> Perform Application Builds - compile/create artifacts		
+		
+		
+		

@@ -1,0 +1,236 @@
+
+************************
+Day 16 : 20th Feb. 2025 
+************************
+
+	Fundamentals of Application Build Tool - Maven
+	
+	Introduction to Build Orchestration Tool - Jenkins 
+	
+	- Maven Application Build Tool :::
+	
+	- Application Build :
+	
+		- It is a process of Compiling the source code and creating the artifacts(Binaries - *.exec/*.war/*.jar/*.dll)
+		
+		- Java Technologies --> 
+		
+		
+	Application Project Workspace/Folder :
+	
+		*.java 
+		*.html
+		*.css 
+		
+		Java Compiler 
+		
+		javac *.java 
+		
+		
+		Maven is one the Java Application Build Tools 
+		
+		ant / Gradle / Maven 
+		
+		
+		Developers Create the Source Code & Save it in the Application Source Code Repository.
+		
+		Repository URL will be shared with the DevOps Team.
+		
+		
+		Environments :::
+		
+		
+		Non-Prod Environments 															Prod Environments
+		
+		
+			- Dev (Developers)
+			
+			- Build 
+			
+			- Test 
+			
+				- QA 
+		
+				- UAT 								=================>						Production Servers 
+		
+		
+	Continuous Integration :
+		- It is the capabililty of Application Development Team to Continously Integrate the Code Changes for further Testing, without impacting others.
+		
+		Tools :
+			- Eclipse based IDEs - like Eclipse for Java,Pycharm,Intellij, Visual Studio, Visual Studio Code
+			- Source Code Management Tool - like github/AWS Code Commit/Azure Repos 
+			- Jenkins/AWS Code Pipeline/Azure Pipeline, Docker, Kubernetes, Ansible 
+
+			
+	What is role of Developers in DEV Environment ????
+		
+		
+	Dev Environment:	
+		
+	Developers' Workflow ::
+
+		1. Create Program : *.java 
+		
+		2. Compile 
+		
+		3. Create artifacts 
+		
+		4. Test the program - Unit Testing using Unit Testing Tool like JUnit
+		
+		5. Push the Changes to Remote github repository 
+		
+		Tools required to perform these activities :::
+		
+		Tools :::
+		
+			- Eclipse based IDEs - like Eclipse for Java,Pycharm,Intellij, Visual Studio, Visual Studio Code
+			- Source Code Management Tool - like github/AWS Code Commit/Azure Repos 
+			- Jdk, Maven, JUnit Testing Tool, git  
+		
+		
+
+	Build Environment: (VM)		--> GIT,JDK,Maven
+
+		Using DevOps Approach ::
+		Automate ::
+
+		- Identify/Clone the Source Code from Github Repository 		
+		- Build the code - Compile and create artifacts(Binaries - *.exec/*.war/*.jar/*.dll) 					
+		- Unit Testing 			
+		- Verify the Unit Test Coverage 
+		- Archive the Artifacts in the Artifactory Library(Jfrog) 
+		- Promote the Application to higher testing Environment(QA)					
+		- Notify the Testing/Development Team 		
+		
+		
+		GITHUB 	==> Version Control the Source Code 
+		
+			mypgm.war_v1.0
+			mypgm.war_v1.1
+			mypgm.war_v1.2
+			mypgm.war_v1.3
+			
+		Artifactory Libraries ==>	jfrog/Az-Artifacts 	==> Used to version control the Application artifacts.
+		
+		Source Code -- Version Controlled using GIThub
+		
+			signin.java_v1.0 	---> Create Artifacts ==> signin.war_v1.0 
+			signin.java_v1.1	---> Create Artifacts ==> signin.war_v1.1
+			
+			
+		Artifactory Library -- Used to Version Control the Artifacts 
+			- Jfrog Artifactory
+			- Azure Artifacts 		
+
+		How to Perform Application Build, Unit Testing ?
+		
+			- Using Maven Build Tool 
+				- Maven is Java Application Build Tool
+				- Maven is used to Compile the Source Code 
+				- Create Artifacts 
+				- Perform Unit Testing
+					(Unit Testing is a process of testing the changes done by the developers)
+				- Maven can verify the Code Coverage 
+				
+		Maven - Build Tool
+		
+		How Maven Works ??
+		
+
+			Java Web Application Project : - 
+
+			My_Web_App - Folder 
+			
+			Maven Project Structure :::			# Java Maven Desktop/Console/terminal Application;
+
+			MVN_Project1				# Project Name 
+				src 
+					main			# Maintain the source code *.java - Business Logic 
+						*.java
+					test			# Maintain the Test Cases and Test Data - JUnit 
+						*.java
+				target
+					artifacts *.war / *.jar
+					
+				pom.xml 			==> defines the application artifacts, plugins and all the required depedencies
+
+				JRE_Libraries
+				MVN_Libraries	
+
+		
+		Application Source Code Repository :
+		
+			Developer create POM.XML File to perform Maven Build
+								
+		Build Tools - Maven - used to build Java applications 
+		
+		Using Maven : 
+			Application Build - Compile the code, create artifacts, perform unit-testing 
+
+				- Build  - It is a process of compiling the source code and create artifacts(Binaries - *.war / *.jar/ *.exec) 
+				- Unit Testing
+	
+	Maven Project :
+		
+		pom.xml - Project Object Model :
+			
+				- Will be part of the Java Application Project - Source Code Repository
+				- It is used to define the properties of application artifacts 
+				- It is used to define dependencies and the plugins required to perform build/unit-testing
+	
+			Maven Repository :		https://mvnrepository.com/
+			
+				- Maven Repositories Contains the Maven Dependencies and Plugins 
+				- During Build, Maven refer to this Repositories and Download the Dependencies to perform Application Build, Unit Testing etc...
+				
+				Eg.: 
+				Build Environment (VM) :::
+
+					Build the application	--> Jdk, Maven 
+					
+					Unit Testing - Junit Testing Tool 
+
+				<!-- https://mvnrepository.com/artifact/junit/junit -->
+				<dependency>
+					<groupId>junit</groupId>
+					<artifactId>junit</artifactId>
+					<version>4.13.2</version>
+					<scope>test</scope>
+				</dependency>
+				
+								
+				<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+				<dependency>
+					<groupId>org.seleniumhq.selenium</groupId>
+					<artifactId>selenium-java</artifactId>
+					<version>4.28.1</version>
+				</dependency>
+
+
+				Java Code Coverage - JaCoCo :::
+
+				<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+				<dependency>
+					<groupId>org.jacoco</groupId>
+					<artifactId>jacoco-maven-plugin</artifactId>
+					<version>0.8.12</version>
+				</dependency>
+				
+	
+		Maven Goals : 
+			This defines the actions we perform using Maven 
+		
+			● mvn compile 	- to compile the source code
+			● mvn test 		- to compile and execute junit test cases
+			● mvn package 	- to compile, test and create artifacts in the target folder of Project Library
+			● mvn clean 	- to clean the target folder.
+
+			Eg.: 
+			
+			mvn clean package 
+			
+			https://github.com/PaperLive-DevOps-Jan25/java-mvn-springbootapp
+			
+			
+

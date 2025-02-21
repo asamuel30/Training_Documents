@@ -58,4 +58,139 @@ Day 16 : 20th Feb. 2025
 				Jenkins_SlaveNode1 (VM)		==> Perform Application Builds - compile/create artifacts		
 		
 		
+
+************************
+Day 17 : 21st Feb. 2025 
+************************
+
+	Jenkins Build Orchestration Tool :::
+	
+	
+	Jenkins Architecture ::
+	
+		Jenkins is based on Master-Slave Architecture :::
 		
+			Jenkins_Master (VM)				==> Install Jenkins - To Create Jenkins CI/CD Pipeline Jobs/Projects
+				Jenkins_SlaveNode1 (VM)		==> Perform Application Builds - compile/create artifacts		
+				
+				
+	Scenario 1 :
+	
+		Java Based Applications :
+		
+		Frequency of Build and Production Release is very less.
+		
+		
+		Jenkins : Stand-alone Server 
+		
+			Jenkins_Master (VM)				==> Install git,jdk,jenkins,Maven 
+												To Create Jenkins CI/CD Pipeline Jobs/Projects and execute.
+												Perform Application Build - compile/create artifacts
+					
+				Jenkins_Slave_Node1 (VM)	==> Java Application Build 
+
+
+					
+	Scenario 2: 
+	
+		Java/Python/.Net/Ruby/Angular/NodeJS
+		
+		Frequency of Build and Prod Release is very high
+		
+		Jenkins :	Master-Slave Architecture
+		
+			Jenkins_Master (VM)				==> Install git,jdk,jenkins
+												Is used create Jenkins Projects/Pipelines Jobs to Automate the Builds.
+			                                    It schedule the builds to run in the respective Jenkins Slave Nodes.
+												
+					Jenkins_Slave(VM)		==> Perform Application Build - compile/create artifacts # Build Server
+					
+					Jenkins_Slave_Node1 (VM)	==> Java Application Build 
+					Jenkins_Slave_Node2 (VM)	==> Python Application Build 
+					Jenkins_Slave_Node3 (VM)	==> .Net Application Build 
+					Jenkins_Slave_Node4 (VM)	==> Angular Application Build 
+					Jenkins_Slave_Node5 (VM)	==> NodeJS Application Build 
+					
+					
+	Jenkins Projects/Pipelines Jobs :::
+	
+		Jenkins Pipeline Project - CICD Workflow :
+		
+		Environments :
+		
+			Dev :
+				Developer Created the Java Web Application Project 
+				Pushed the Project Source Codes to Github Repository
+				
+			Build_Server :
+			
+				1. SCM_Checkout
+				2. Application Build using Maven 
+				3. Unit Testing 
+					Email Notifications
+				4. Create Artifacts 
+				5. Promoted to QA Environment
+					Email Notifications
+				6. Automated QA Testing
+					Email Notifications
+				5. Promoted to UAT Environment
+					Email Notifications
+				6. Automated UAT Testing
+					Email Notifications
+				5. Promoted to Prod Environment
+					Email Notifications
+				6. Automated Prod Testing 
+					Email Notifications
+					
+	Working with Jenkins :::
+
+		- Developers' Perspectives :
+		
+			- Developers are just the consumer of Jenkins Projects.
+			- Developers can Execute the Jenkins Project, Cancel the Job Execution, Check the Output of Jenkins Jobs.
+		
+		- DevOps Perspectives :
+		
+			- DevOps Team owns the Jenkins Archetecture
+			
+			- DevOps Team is going to administrate Jenkins Servers 			
+		
+		Roles and Responsibilities of DevOps Team :::
+			
+			- Installation of Jenkins 
+			- Plugins Management 
+			- Global System Configurations 
+			- Tools Management 
+			- User Management 
+			- Security Management 
+			- Credential Management 
+			- Create CICD Pipeline Projects for all the Applications
+			- Onboard the Applications to Jenkins CICD Process 
+			- TroubleShoot the Issues
+			- Periodically take care of the Backup of Jenkins Projects and Services 
+			- Periodically upgrade the Jenkins Servers and Plugins
+			
+			
+	
+	- Installation of Jenkins :::
+	
+			https://www.jenkins.io/doc/book/installing/
+	
+		AWS Cloud Platform :
+		
+			Create EC2 Instances (VM) - Ubuntu 22.04v 
+			Install Jenkins.
+			
+			Package Management :
+			
+				apt install jenkins 
+				
+				1. Install the Pre-requisites			==> git, jdk,
+				
+				2. Install the Actual Tool 				==> Jenkins 
+				
+				3. Post Installation Activities 		==> Start Jenkins Service
+			
+			
+			Jenkins run as a service - it can be accessible using Web Browser 
+			Jenkins by default run in port 8080		

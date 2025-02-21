@@ -54,3 +54,10 @@ systemctl status jenkins
 # systemctl enable jenkins 
 
 /var/lib/jenkins 		# Default Installation Dir of Jenkin on Linux Box
+
+
+Open web browser :
+
+http://<Public_IP_Address>:8080/
+
+E.g.: http://13.127.8.53:8080/

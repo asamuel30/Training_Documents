@@ -165,6 +165,7 @@ Day 17 : 21st Feb. 2025
 			- Security Management 
 			- Credential Management 
 			- Create CICD Pipeline Projects for all the Applications
+			- Jenkins Master/Slave Configuration
 			- Onboard the Applications to Jenkins CICD Process 
 			- TroubleShoot the Issues
 			- Periodically take care of the Backup of Jenkins Projects and Services 
@@ -193,4 +194,53 @@ Day 17 : 21st Feb. 2025
 			
 			
 			Jenkins run as a service - it can be accessible using Web Browser 
-			Jenkins by default run in port 8080		
+			Jenkins by default run in port 8080
+				
+			
+
+************************
+Day 18 : 24th Feb. 2025 
+************************
+	
+			- Plugins Management 
+				- Enable/Disable/Uninstall/Install/Upgrade the Plugins 
+				
+			- Global System Configurations 
+			- Tools Management 
+			- User Management 				# To enable User Authentication
+			- Security Management 			# To enable User Authorization
+			- Credential Management 
+			
+			
+	- Create Jenkins Project/Job :
+	
+		Jenkins Projects / Jobs :
+		
+			- Freestyle Project 			# Manual Configurations using GUI 	- Not Reusable
+			
+			- Pipeline Project 				# Done using Groovy Scripts			- This can be reusable 
+			
+			
+		Handling Variables ::
+		
+			- Environment Variables 		# Pre-defined system variables can be used in the jenkins project
+
+
+				echo "jenkins-${JOB_NAME}-${BUILD_NUMBER}"
+				
+					"${var_name}"
+			
+			
+			- User Defined Variables 		# User Defined 	
+				
+					String envi = "QA"
+					
+
+		TroubleShoot the Issues
+		
+		
+		
+Next :	
+	- Pipeline Project :::
+		
+		

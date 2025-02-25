@@ -243,4 +243,183 @@ Day 18 : 24th Feb. 2025
 Next :	
 	- Pipeline Project :::
 		
+
+************************
+Day 19 : 25th Feb. 2025 
+************************
+
+	- Create CICD Pipeline Projects
+	
+	- Jenkins Master/Slave Configuration
+	
+	
+	Application Build and Deployments :
+	
+	Jenkins Pipeline :
+	
+	Stages :
+		Stage1 :
+			Task1 
+		Stage2 : 
+			Task1
+			Task2 
+			
+			
+	Pipeline Projects :
+	
+		- Scripted Pipelines 	
 		
+		- Declarative Pipelines 
+		
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello1') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Hello2') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
+
+
+Java Maven Web Application : Build and Deploy to Target Environment using Jenkins Pipeline.
+
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM_Checkout') {
+            steps {
+                echo 'Perform SCM Check out'
+            }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build using Maven'
+            }
+        }
+        stage('Deploy to Target Server') {
+            steps {
+                echo 'Perform Application Deployment to Target - Tomcat Server'
+            }
+        }
+    }
+}
+
+
+Master-Slave Archetecture :::
+
+	Jenkins_Master Node  (VM)			==> Is used create Jenkins Projects/Pipelines Jobs to Automate the process.
+											Is used to schedule the builds in the Jenkins Slave Nodes.
+											
+		Jenkins_Slave Node (VM)			==> Used of Perform Application Build 
+		
+		
+		
+	Jenkins_Master (VM) 				==> Install git,jdk,jenkins 
+	
+		Jenkins_Slave Node (VM)			==> Install git,jdk,maven
+											Create a User ID 
+											Create Key Pair
+		
+		
+		
+	Remote Server Handling :::
+	
+		Using SSH :
+		
+			-> User_Name 
+			-> Host_Name 			# Private IP Address of Slave Node1
+			-> Key_Pair
+				- Public Key 
+				- Private Key
+
+
+pipeline {
+    agent { label 'slave1' }
+
+    stages {
+        stage('SCM_Checkout') {
+            steps {
+                echo 'Perform SCM Check out'
+				git 'https://github.com/PaperLive-DevOps-Jan25/java-mvn-springbootapp.git'
+            }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build using Maven'
+				sh 'mvn clean package'
+            }
+        }
+        stage('Deploy to Target Server - QA Testing') {
+            steps {
+                echo 'Perform Application Deployment to Target - Tomcat Server'
+            }
+        }
+    }
+}
+
+
+Deploy the Artifacts to Target Server :
+
+
+Deployment ?? 			# Copy 
+
+	Target Server / Deployment / Hosted Server 
+	
+	Web Application Servers(WAS) - Tomcat / nginx / apache httpd			# Used to execute / run the Web application artifacts 
+	
+	
+	
+	How to configure the Tomcat Web Application Server (WAS) 
+	
+	
+	Jenkins_Master (VM) 				==> Install git,jdk,jenkins 
+	
+		Jenkins_Slave Node (VM)			==> Install git,jdk,maven
+											Create a User ID 
+											Create Key Pair	
+											
+	Tomcat_Server (VM)					==> jdk, Tomcat WAS
+											Create a User ID
+		                                    Create Key Pair	
+											
+	
+	Install Publish Over SSH Plugins in Jenkins Master Node.	
+			- Is to establish secure connection and copy the artifacts to the Remote Servers through Jenkins_Master
+			
+			
+			Goto Plugins Manager - under Available Plugins tab - search for Publihs over ssh plugin and install.
+			Enable Restart upon installation 
+			
+			
+			
+	Deployment ::
+	
+	
+		Source Server: 													Target Server:
+		
+			Jenkins_Slave_Node1 											Tomcat_Server
+			
+				Source Path:														Target Path:
+
+					target/*.war													 	/opt/tomcat/webapps/
+																						
+																						/opt/tomcat/webapps/*.war
+			
+				
+Next :
+
+		Configure Tomcat Server 
+		Create CICD Pipeline 
+		
+		Build Trigger 
+		
+		Email Notifications 		

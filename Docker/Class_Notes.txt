@@ -1,0 +1,119 @@
+
+************************
+Day 21 : 28th Feb. 2025 
+************************
+
+	Containerization using Docker ::::
+		
+		
+	- Containerization :	It is process of packaging the Application along with its dependencies.
+	
+	
+	- Virtual Machines :::
+	
+		- VMs are Hardware Level Virtualization 
+		- VMs are created using Hypervisor 
+		- VMs are used to execute Operating System
+		- VMs will continue to run, even if there is no active Application/Task
+		- VMs will consume More Space and Time to start the application/task
+	
+	- Containers :::
+	
+		- Containers are OS Level Virtualization 
+		- Containers are created using Container Engine  
+		- Containers are used to run the Application/Task. NOT Operating System
+		- If there is not Active Task/Application, Contianers will immediately go to EXIT State.
+		- Containers will consume less Space and Time to start the application/task	
+		
+		- Container are used to Deploy any Micro-Service Based Application Services.
+		
+		- Contianers run in its' own isolated address space.
+		
+			- By using underlying properties of Operating System :
+					- Name Space					
+					- Control Group 
+	
+	
+	Terminologies / Architecture Components :
+	
+		Container Engine		# Is used to Create and Manage the Container Images and Containers
+								# Docker Container Engine 
+	
+		Containerization 		# It is process of packaging the Application along with its dependencies.
+		
+		Container Image 		# Is a static file that defines the properties and dependencies of application to create a container.
+								# Images are Non-Executable
+								# Images composed of various Layer of Instructions
+							
+		Container				# Is an Executable unit of Container Image 
+		
+		Container Registry		# Is used to manage/save/version control the Container Images
+								# DockerHub is one of the Container Registries
+								# Create DockerHub Account 
+									https://hub.docker.com/
+		
+		Container Repository	#	It is subset of Container Registry
+		
+	
+	
+	Infra-structure Perspectives :
+	
+		Jenkins :	Master-Slave Architecture
+		
+			Jenkins_Master (VM)				==> Install git,jdk,jenkins
+					Jenkins_Slave_Node1 (VM)	==> Java Application Build 
+					Jenkins_Slave_Node2 (VM)	==> Python Application Build 
+					Jenkins_Slave_Node3 (VM)	==> .Net Application Build 
+					Jenkins_Slave_Node4 (VM)	==> Angular Application Build 
+					Jenkins_Slave_Node5 (VM)	==> NodeJS Application Build 
+
+			Jenkins_Master (VM)				==> Install git,jdk,jenkins
+			
+				Jenkins_Slave_Node1 (VM)
+					- Install Container Engine 
+							C1 				==> Java Application Build 
+							C2              ==> Python Application Build 
+							C3              ==> .Net Application Build 
+							C4              ==> Angular Application Build 
+							C5              ==> NodeJS Application Build 
+							
+							
+	Developer's / Deployment Perspectives :
+	
+			Non-Prod Environments	::
+
+			
+		
+				Dev Environment		
+							Create Source Code :
+							
+							Build : Compile & Create Artifacts 			mywebapp1.war
+							Unit Level Testing 
+							
+							Jdk17,Tomcat8.5 -- Run *.war
+							
+							Containerization ::: It is process of packaging the Application along with its dependencies.
+							
+							
+							Package/Container Image --> mywebapp1-img1 ( mywebapp1.war,jdk17,tomcat8.5)
+							
+							Save the Container Image mywebapp1-img1 in the DockerHub Container Registry
+							
+							
+
+					QA 		# Upon Deployment of Image mywebapp1-img1
+						
+							
+							Container Engine 
+						
+								Create Application Container using Image mywebapp1-img1
+								
+								
+						
+Next :
+
+	Install Container Engine 
+	DockerHub Access 
+	
+	Docker Cli Commands 
+	

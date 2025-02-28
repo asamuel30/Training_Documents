@@ -564,3 +564,117 @@ Next :::
 	Email Notifications 
 	
 	Docker Module
+
+
+
+************************
+Day 21 : 28th Feb. 2025 
+************************
+
+	Email Notifications using Jenkins Pipeline :
+	
+	1. Setup the Email Server
+		- Create Account - Gmail 
+		- Enabled with the App Token/Access Token	# Credential to config in Jenkins.
+		
+	2. Login to Jenkins Server 
+		- Managed Jenkins --> Email Notifications --> Add Email Server Configurations.
+		- Test the Email Configurations
+
+
+
+	Email Notifications :::::::
+	
+		In Jenkins Pipeline Jobs, Email Notifications can be done as a post build action.
+		
+		
+		Stage{}
+		post{
+			success 
+			failure 
+			abort
+		}
+		
+		
+
+Login to Gmail :::
+
+Click Manage Account Settings
+
+@Left side panel - select Security 
+
+Two Way Authentication - MFA --> mobile#
+
+App Password = 16 bytes of App Password. vaufxwhdbtnlltzr vauf xwhd btnl ltzr
+
+What ? window
+Which Appln - email	
+
+	
+To Setup the Email Notifications, First we need to set the Email Server in the Jenkins System configuration :
+
+goto manage jenkins -> system configuration 
+
+goto Email Notification 
+		
+SMTP Server :
+smtp.gmail.com
+
+SMTP Authentication
+
+SMTP Port :: 465
+
+
+User Name : <EMail_ID>
+
+Password : <App Password>
+
+pipeline {
+    agent any
+
+    stages {
+        stage('SCM_Checkout') {
+            steps {
+                echo 'Perform SCM Check out'
+				git 'https://github.com/PaperLive-DevOps-Jan25/java-mvn-springbootapp.git'
+            }
+             post {
+                failure {
+                  sh "echo 'Send mail on failure'"
+					mail bcc: 'l@gmail.com', body: 'Jenkins Jobs Status ', cc: 'l@gmail.com', from: '', replyTo: '', subject: 'SCM-Checkout Failed ', to: 'l@gmail.com'
+                }
+              }
+        }
+        stage('Application Build') {
+            steps {
+                echo 'Perform Application Build using Maven'
+				sh 'mvn clean package'
+            }
+             post {
+                failure {
+                  sh "echo 'Send mail on failure'"
+					mail bcc: 'l@gmail.com', body: 'Jenkins Jobs Status ', cc: 'l@gmail.com', from: '', replyTo: '', subject: 'Build Failed ', to: 'l@gmail.com'
+                }
+              }
+        }
+        stage('Deploy to QA Server') {
+            steps {
+                echo 'Perform Application Deployment to Target - Tomcat Server'
+            }
+             post {
+                success {
+                  sh "echo 'Send mail on Success'"
+					mail bcc: 'l@gmail.com', body: 'Jenkins Jobs Status ', cc: 'l@gmail.com', from: '', replyTo: '', subject: 'Deployment Successful ', to: 'l@gmail.com'
+                }
+                failure {
+                  sh "echo 'Send mail on Failure'"
+					mail bcc: 'l@gmail.com', body: "Jenkins Jobs Status ${BUILD_URL}", cc: 'l@gmail.com', from: '', replyTo: '', subject: 'Deployment Failed ', to: 'l@gmail.com'
+					
+					mail bcc: 'l@gmail.com', body: 'Jenkins Jobs Status ${BUILD_URL}', cc: 'l@gmail.com', from: '', replyTo: '', subject: 'Deployment Successful', to: 'l@gmail.com,l2@gmail.com'
+                }
+              }
+        }
+    }
+}	
+
+

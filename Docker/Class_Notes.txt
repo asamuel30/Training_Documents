@@ -285,3 +285,195 @@ Day 22 : 28th Feb. 2025
    72  clear
    73  history
 
+
+
+************************
+Day 23 : 4th Mar. 2025 
+************************	
+
+	Create Docker Container images
+	
+	1. docker commit 
+	
+		- It is used to create a Container Image based on the existing Container reference
+		
+		Syntax :
+		
+			docker commit <container_id> <new_image_name>
+			
+			docker commit <container_id> <dockerhub_repository_name>/<new_image_name>:<tag_no>
+			
+		Eg. : 
+		
+			docker commit df80e7e4a315 loksaieta/pl-appbuild-img:v1.0
+			
+	
+	2. docker build :
+	
+		- It is used to create a Container Image using the Dockerfile definition
+		- This method is used by the Developers to Containerize the Application Services 
+		- Dockerfile will be created by the Developers and maintained in the Source Code Repositories
+		
+		Dockerfile ::
+		
+			- It composed of Instructions to create the layers of Container Image.
+			
+		
+		vi Dockerfile 
+		
+		FROM ubuntu 
+		RUN apt update -y 
+		RUN apt install git -y 
+		RUN apt install maven -y		
+		
+		save 
+		
+			Syntax:
+			
+				docker build -t <dockerhub_repository_name>/<new_image_name>:<tag_no> .			# '.' denotes the Dockerfile name
+																								# Should run this command from the path where we have Dockerfile.
+			
+			Eg.: 
+		
+				docker build -t loksaieta/pl-java-appbuild-img .
+				
+		
+		
+		Dockerfile Instructions :
+		
+		
+			- FROM 					# To identify the base image
+			
+			- RUN 					# Execute/Run any Package 
+			
+			- COPY 					# Used to Copy the files from the Host Volume to Container Volume 
+			
+			- CP 					# Used to Copy the files within the Container Volumes 
+			
+			- ADD					
+					# Used to Copy the files from external URL to Container Volume as well as from the Host Volume to Container Volume 
+					
+			- EXPOSE				# Define the Container Port 
+			
+			- WORKDIR				# Is used to set the Current working directory 
+			
+			- ENV 					# Set the Environment Variables 
+			
+			- CMD 					# To define the start-up task/command to the container 
+									# This Start-up task/command can be changed at runtime									
+		
+			- ENTRYPOINT			# To define the start-up task/command to the container 
+									# This Start-up task/command cannot be changed at runtime	
+									
+									
+									
+		vi Dockerfile
+		
+		FROM tomcat:8.5
+		COPY target/mywebapp.war /usr/local/tomcat/webapps
+		EXPOSE 8089
+
+
+		docker build -t loksaieta/pl-java-webapp-img .
+
+	
+	docker history <image_name>		# To get the layers of a Container Image
+	
+	
+	Docker Volumes :::
+	
+	
+		Persistant Data/Volume:
+		
+		
+		On Containers perspective :
+		
+			- Stateless Application
+					# The application that will never leave a trace of execution 
+					# Basically Containers are used to run Stateless Applications
+					# Containers are used to execute the tasks. Not to store any data.
+					
+			
+			- Stateful Application 
+					# The application that will leave some trace of execution 
+					# Like Creating Output File / Log Files / Reports 
+			
+		3-Tier Application Archetecture:
+		
+			- Front-End Layer 	- User Interface 
+			
+			- Application Layer - Business Logic 
+			
+			- Back-End Layer	- DataBase 
+			
+		docker volume :
+		
+			- Local Volume 
+				- Host Volume ::::
+				
+		
+		docker volume list		# To get the list of Volumes 
+		
+		docker volume create pl-vol1 
+		
+		docker volume inspect pl-vol1
+		
+				# /var/lib/docker/volumes/pl-vol1/_data
+		
+		docker run -it --mount source=pl-vol1,destination=/pl-vol1 centos bash
+		
+
+
+Next ::
+
+		Publish the Images 
+		
+		Container Orchestration 
+		
+			 - Docker Compose 
+			 - Docker Swarm 
+			 
+			 - Kubernetes 
+
+   88  clear
+   89  history
+   90  ckear
+   91  clear
+   92  docker images
+   93  docker ps
+   94  docker ps -a
+   95  docker ps
+   96  docker ps -a
+   97  docker volume
+   98  docker volumes
+   99  clear
+  100  docker volume
+  101  clear
+  102  docker volume list
+  103  docker volume create pl-vol1
+  104  docker volume list
+  105  docker volume inspect pl-vol1
+  106  cd /var/lib/docker/volumes/pl-vol1/_data
+  107  ls
+  108  cd ..
+  109  clear
+  110  ls
+  111  cd pl-vol1/
+  112  clear
+  113  ls
+  114  cd _data/
+  115  pwd
+  116  ls
+  117  clear
+  118  docker images
+  119  clear
+  120  docker run -it centos bash
+  121  docker run -it --mount source=pl-vol1,destination=/pl-vol1 centos bash
+  122  clear
+  123  ls
+  124  echo "rec1" >> hostfile1.txt
+  125  ls
+  126  cd ~
+  127  docker run -it --mount source=pl-vol1,destination=/pl-vol1 centos bash
+  128  clear
+  129  history

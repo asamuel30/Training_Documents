@@ -477,3 +477,174 @@ Next ::
   127  docker run -it --mount source=pl-vol1,destination=/pl-vol1 centos bash
   128  clear
   129  history
+
+
+				
+
+	
+************************
+Day 24 : 6th Mar. 2025 
+************************		
+
+	Publish the Images to DockerHub
+	
+	Container Orchestration 
+	
+		 - Docker Compose 
+		 - Overview of Docker Swarm 
+		 
+		 - Kubernetes	
+		 
+		 
+		
+		
+	Publish the Images to DockerHub :
+	
+	
+	1. Build an application image
+	
+	2. Publish to DockerHub Registry using Docker Cli Command 
+	
+		Syntax: 
+		
+		docker push <dockerhub_repository_name>/<new_image_name>:<tag_no>
+		
+			- Create a DockerHub Access Token
+			
+			- Login to DockerHub 
+			
+				--> User_Name 	:		docker login -u loksaieta
+				
+				--> Access_Token :		fGA
+				
+		
+		Eg.: 	
+		
+		docker push loksaieta/pl-appbuild-img:v1.0
+		
+	
+				
+	
+	Container Orchestration ::: 
+	
+		 - Docker Compose 
+		 - Overview of Docker Swarm 
+		 
+		 - Kubernetes
+
+
+		- Docker Compose :
+		
+			- It is plugin/extension to Docker engine, it is used to execute multiple containers as a Service.
+			
+			- Install Docker Compose: https://docs.docker.com/compose/install/linux/#install-the-plugin-manually
+			
+			
+			3 - Tier Application Archetecture :
+			
+			User_Sign_In Micro-Service Service :
+			
+				- Front-End Layer 		--> User Interface 		--> img1 --> C1
+				
+				- Application Layer 	--> Business Logic 		--> img2 --> C2 
+				
+				- Back-End Layer 		--> Database 			--> img3 --> C3 
+		
+		
+			Create a manifest file using *.yaml scripts
+			
+			Yaml Scripts :		Declarative Script 
+								Keys & Values Pair 
+	
+			vi mywebapp1.yaml
+			
+			Service :
+				Name : svc1
+				
+					C1
+					C2
+					C3 
+					
+			docker compose up 			# Used to Start a service defined in the manifest file 
+			
+			docker compose down 		# Used to Stop a service defined in the manifest file 
+					
+
+
+# Manual Installation of Docker Compose :::
+			
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+curl -SL https://github.com/docker/compose/releases/download/v2.24.0/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+	
+docker compose version
+
+vi docker-compose.yaml
+
+
+
+### Yaml Files are based on Keys & Values -- key:value Pairs
+
+version: '3'
+services:
+  webserv1:
+    image: "tomcat:8.0"
+    ports:
+      - 8098:8080
+  dbserv1:
+    image: "redis:alpine"
+	
+docker compose up 
+
+
+				
+		
+		- Docker Swarm :
+		
+			- Is a Container Orchestration Tool, used to ensure High Availability of the Containers.
+			
+			- Creates Replicas of Containers 
+			
+			- No Auto-Scaling the Container Instance 	--> Scale-up / scale-down
+			
+			- No Load-Balancing
+			
+			- Docker Swarm is limit to Docker Containers only.
+			
+			- Docker Swarm is not capable to handle production workloads 
+			
+			
+			Prod-Environment:
+			
+				Prod_Server1
+				Prod_Server2
+				Prod_Server3
+			
+				- Front-End Layer 		--> User Interface 		--> img1 --> C1.1,C1.2,C1.3
+				
+				- Application Layer 	--> Business Logic 		--> img2 --> C2.1,C2.2,C2.3 
+				
+				- Back-End Layer 		--> Database 			--> img3 --> C3.1,C3.2,C3.3 
+
+
+	Kubernetes :::
+	
+		- Is a Open-Source Container Orchestration Tool.
+		
+		- Ensure High Availability of the Pods/Containers by creating replicas of pods.
+		
+		- Support Auto-Scaling and Load Balancing 
+		
+		- Able to handle / provision hugh volumes to execute containerized application services.
+		
+		- Self-Healing!
+		
+		- Persistance Volumes 
+		
+
+					
+			
+		Deployments
+	

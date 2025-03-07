@@ -1,0 +1,148 @@
+
+************************
+Day 25 : 7th Mar. 2025 
+************************
+	
+	Kubernetes ::
+	
+	Overview of Kubernetes 
+	
+	Kubernetes Architecture
+	
+	Components of Kubernetes Archetecture 
+	
+	Terminologies/Concepts 
+		
+	
+	Install Kubernetes
+	
+	Working with Kubernetes 
+	
+	
+
+	Kubernetes :::
+	
+		- Is a Open-Source Container Orchestration Tool.
+		
+		- Ensure High Availability of the Pods/Containers by creating replicas of pods.
+		
+		- Support Auto-Scaling and Load Balancing 
+		
+		- Able to handle / provision hugh volumes to execute containerized application services.
+		
+		- Self-Healing!
+		
+		- Persistance Volumes 
+		
+		- Can be used to Deploy the micro-service based applications without any downtime.
+		
+		
+		
+	Kubernetes Architecture & its Components :
+		
+		
+		- Kubernetes_Master 								# Used to Schedule the pods for deployment
+		
+			- Kubernetes_WorkerNodes1,2,3,4,5				# Target Servers (Production Servers)
+						
+	Terminologies:
+		
+		Kubernetes Cluster 	# It is a collection of Kubernetes WorkerNodes.
+		
+	
+	Kubernetes Architecture :
+	
+	Components of Kubernetes Archetecture ::
+	
+	
+		API Server 			# To Receive the request and validate - It acts as an interface between the user and Kubernetes Master	
+		
+		ETCD 				# Is a data-store maintain the information of kubernetes
+							# It acts as a single point of source 
+		
+		Scheduler 			# Based on the request, it will identify the healthy worknodes of deployment of pods.
+		
+		Controller Manager 	# To run the pods in its' desired state all the time
+		
+		Kubelet 			# Is a kubernetes Agent responsible to deploy the pods 
+		
+		Kube-Proxy			# To set-up the pod networking/Communication
+		
+		CRI - Container Runtime Interface(Container-D)
+		
+							# Used to interact with Container Registries and identify the container images for deployment of pods.
+							
+							
+	Terminologies :::
+		
+		kubectl					# Is command line utility to interact with kubernetes master 
+		
+		pod						# Atomic unit of task scheduled to run in kubernetes
+
+		Container Image 		# Is a static file that defines the properties and dependencies of application to create a container.
+								# Images are Non-Executable
+								# Images composed of various Layer of Instructions
+							
+		Container				# Is an Executable unit of Container Image 
+		
+		Container Registry		# Is used to manage/save/version control the Container Images
+								# DockerHub is one of the Container Registries
+								# Create DockerHub Account 
+									https://hub.docker.com/
+		
+		Container Repository	#	It is subset of Container Registry		
+		
+		Kubernetes Cluster 		# It is a collection of Kubernetes WorkerNodes.
+		
+	
+	Kubernetes Concepts :::
+	
+		kubectl Commands 
+		
+		pods 
+		
+		Pod Networking 
+		
+		Kubernetes Services 
+		
+		Controller Object :
+			Deployment Controller Object 
+			
+		Kubernetes Volumes :
+			- Hostpath Volume 
+		
+		Namespaces 
+		
+		
+	Installation and Configuration of Open-Source Kubernetes Master and WorkerNodes ::::
+	
+	
+		- Minikube 		
+		
+		- Kubeadm (production level) 
+		
+		
+	Installation of Kubernetes using Kubeadm :::	
+	
+		1. Launch 3 VMs on AWS Cloud (Ubuntu v22.04) --> (1 Master Node, 2 WorkerNodes)
+		
+		In all the Nodes(i.e., Master Node and WorkerNodes):
+		
+			2. Allow all traffic for all the nodes - just for this demo
+			3. Change the HostName of all the Nodes
+			4. Disable swap configuration in all the nodes
+			5. Install Docker in all the nodes
+			6. Install CRI - 'Container-D' in all the nodes
+			7. Install Kubeadm,kubelet,kubectl 
+			8. Enable Kubelet	
+		   
+		Only on Master Node:
+		
+			9. Execute Kubeadm Init Command 		# To initialize Kubernetes Master Node
+			10. Enable user Access to Kubernetes
+			11. Install flannel Network plugins for kubeproxy
+
+		Only on WorkerNodes:		
+		
+			12. Execute Kubeadm Join Command 		# To attach the Worknodes with Kubernetes Master Node.
+			

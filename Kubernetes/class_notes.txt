@@ -146,3 +146,71 @@ Day 25 : 7th Mar. 2025
 		
 			12. Execute Kubeadm Join Command 		# To attach the Worknodes with Kubernetes Master Node.
 			
+
+************************
+Day 26 : 10th Mar. 2025 
+************************
+
+	- Installation and Configuration of Open-Source Kubernetes Master and WorkerNodes ::::
+	
+	Installation of Kubernetes using Kubeadm :::	
+	
+		1. Launch 3 VMs on AWS Cloud (Ubuntu v22.04) --> (1 Master Node, 2 WorkerNodes)
+		
+		In all the Nodes(i.e., Master Node and WorkerNodes):
+		
+			2. Allow all traffic for all the nodes - just for this demo
+			3. Change the HostName of all the Nodes
+			4. Disable swap configuration in all the nodes
+			5. Install Docker in all the nodes
+			6. Install CRI - 'Container-D' in all the nodes
+			7. Install Kubeadm,kubelet,kubectl 
+			8. Enable Kubelet Agent
+		   
+		Only on Master Node:
+		
+			9. Execute Kubeadm Init Command 		# To initialize Kubernetes Master Node
+			10. Enable user Access to Kubernetes
+			11. Install flannel Network plugins for kubeproxy
+
+		Only on WorkerNodes:		
+		
+			12. Execute Kubeadm Join Command 		# To attach the Worknodes with Kubernetes Master Node.
+			
+	
+	- Kubernetes Services : 
+	
+		- ClusterIP Service 		# Default. It is to access pods within the cluster
+		
+		- NodePort Service 			# To Expose the Pods to Internet
+									# NodePorts : 30000 to 32767
+									# Using the <External_IP_Address of Node>:<NodePort_Number> Access thru web browser
+		
+		- LoadBalancer Service 		
+						# To Access the Application thru internet - This Service is created at the application level
+						# The LoadBalancer is not the Kubernetes Service. It should be procured by the Cloud Service Providers like AWS/Azure/GCP
+						# Defined at the Application Level. 
+	
+			User_Login_Service:
+			
+				- Front-End Layer 		--> User Interface 		--> img1 --> Pod1
+				
+				- Application Layer 	--> Business Logic 		--> img2 --> Pod2
+				
+				- Back-End Layer 		--> Database 			--> img3 --> Pod3
+	
+	
+Pod1.1,Pod1.2,Pod1.3
+
+Pod2.1,Pod2.2,Pod2.3 
+
+Pod3.1,Pod3.2,Pod3.3 
+
+
+
+	- Create and Deploy the Pods :
+	
+		- Create a manifest file -- *.yaml / *.json		- Both are based on Keys:Value pair
+		
+		- kubectl create/apply -f *.yaml 		# Submit the kubernetes object creation request
+

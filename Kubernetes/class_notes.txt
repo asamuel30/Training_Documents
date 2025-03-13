@@ -214,3 +214,140 @@ Pod3.1,Pod3.2,Pod3.3
 		
 		- kubectl create/apply -f *.yaml 		# Submit the kubernetes object creation request
 
+	
+		
+************************
+Day 27 : 11th Mar. 2025 
+************************
+	
+	Kubernetes Deployment Controller Object :::
+	
+	
+	Replicaset :::
+		--> Replicaset is used to execute the specific no. of pods in the cluster.
+		--> Replicaset uses the Set Based Operator
+		--> Used to replicate the pods and able to scale up/down
+		--> The Replicasets will be automatically created, while creating Deployment Controller Object.
+		
+		Application_Service ===> 
+		
+			100 replicas of pods 
+	
+	Deployment Controller :::
+	
+		--> It is used to deploy the pods and ensure high availability of pods by creating pod replicas 
+		
+		--> 1. Create Muliple instance/replicas/copies of pods 
+			2. Used to Scale-Up / Scale-Down the Pods 
+			3. Used to Upgrade the application pods 
+			4. Used to Down-grade/roll-back the application pods
+			
+		--> The upgrade/down-grade of application pods can be done without any downtime. 
+		
+		--> To achieve zero-downtime during upgrade/down-grade, By Default, it used Rolling-Update Deployment Strategy.
+	
+		Rolling-Update Deployment Strategy:::
+		
+			mywebapp.java_v1.0					mywebapp.war_v1.0				mywebapp_img:v1.0	
+	
+
+		replica = 3
+	
+	mywebapp_img:v1.0	: pod1	--> wn1
+	
+	mywebapp_img:v1.0	: pod2	--> wn2
+	
+	mywebapp_img:v1.0	: pod3	--> wn1
+
+
+			mywebapp.java_v2.0					mywebapp.war_v2.0				mywebapp_img:v2.0	
+
+		replica = 3
+		
+		
+		Rolling-Update Deployment Strategy:::
+	
+	mywebapp_img:v1.0	: pod1	--> wn1		mywebapp_img:v2.0 --> pod1
+		
+	mywebapp_img:v1.0	: pod2	--> wn2		mywebapp_img:v2.0 --> pod2
+	
+	mywebapp_img:v1.0	: pod3	--> wn1		mywebapp_img:v2.0 --> pod3
+	
+	
+		
+	Output ::
+	
+		- Deployment Object 
+		
+		- Replicaset 
+		
+		- Pods 
+	
+	
+Kubernetes Volumes :
+
+	--> Persistant Volume
+	
+	--> Persistant Volume Claim
+	
+		--> HostPath Volume 
+		
+		--> config-map Volume 
+		
+		--> Secret Volume 
+		
+		
+Access Level :
+
+	Namespaces ::
+	
+		--> Is a logical partition of the Kubernetes Cluster 
+	
+	Environments :::
+	
+	
+	
+	Non-Prod Kubernetes_Cluster(10)														Prod Kubernetes_Cluster
+	
+		dev - namespace 
+		
+		qa	- ns 
+		
+		uat	- ns 																			prod - Active NS(LIVE)
+		
+	
+	devteam1-ns
+	
+	testteam1-ns
+
+d:/
+	
+	Folder1 :												NS 
+		- file1.txt  -- 5 MB
+		
+	Folder2 :												NS
+		- file1.txt  -- 5 MB
+		- file2.txt  -- 5 MB
+		
+		
+		
+1. Practise all the Kubernetes Concepts (Deployment Controller Object)
+
+2. Execute Jenkins Pipeline:
+
+	--> SCM-Checkout 
+	
+	--> Application Build 
+
+3. Using Docker Build Create an Application Image using the Dockerfile present in Workspace 
+
+4. Publish the Image to DockerHub
+
+5. Deploy the Application image in Kubernetes using Pod - Manifest.
+
+
+
+	
+	docker rmi <image_name>			# Remove Docker Image from local Machine 
+	
+	docker rm <container_id>		# Removesa Docker Container from local Machine 

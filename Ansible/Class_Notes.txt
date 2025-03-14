@@ -113,4 +113,55 @@ Next :::
 		
 		- Execute the Ansible Modules using Ansible Adhoc commands / Playbooks
 		
+************************
+Day 29 : 14th Mar. 2025 
+************************		
+	
+	Ansible Adhoc Commands 
+	
+	- Ansible Adhoc Commands :
+	
+		- It is used to execute a module in the target machine.
+		- Ansible Adhoc Commands are cannot be reusable
+		
+			Eg.: 
+			
+			Target Server :
+			
+				install git :
+					- apt install git -y				
+
+
+		Task : Deploy an artifact *.war from Jenkins Slave Machine to QA-Server.
+
+			
+	- Ansible Playbooks :
+	
+		- Used to execute the series of task/Modules in the target machine.
+		- Ansible Playbooks should be reusable 
+		- Ansible Playbooks are written using *.yaml Scripts 
+		
+			Eg.: 
+				Target Server : 
+				
+					Setup the Jenkins Slave_Node :
+					
+						- apt install git -y 
+						- apt install jdk -y 
+						- apt install maven -y 
+						- apt install docker.io -y 
+	
+	
+	- Handling Variables in Ansible Playbook ::::
+	
+		- Variables are used to create reusable Ansible Playbooks.
+		
+			- Ansible Environment Variables
+				- Captured using setup module 
+			
+			- User Defined Variables 
+			
+				-> Methods to handle the Variables
+				
+
 	

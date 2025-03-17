@@ -1,0 +1,167 @@
+
+************************
+Day 28 : 13th Mar. 2025 
+************************
+
+
+	CICD Pipeline : Final Project Demo.
+		
+		- GIT/Maven/Jenkins/Docker/Kubernetes
+		
+	Configuration Automation using Ansible: 
+	
+	
+	Infra-structure Management Team :::
+	
+		Provision/Create the IT Resources(Servers)		-- Terraform/Cloudformation/ARM
+		
+		Configure the Servers 							-- Ansible/Chef/Puppet
+					
+		IAC(Infra-structure As Code) Tools - Declarative Scripts using *.json/*.yaml 
+
+
+	Configuration Management System : Ansible 
+	
+	Why Ansible?
+	
+	Ansible Architecture & Components :
+	
+		Ansible used push mechanism to perform any task in the target server.
+	
+	Working with Ansible :
+	
+		- Why we need Ansible ?
+		
+		- Ansible Architecture 
+			- Master & Client Architecture:
+			
+		- Ansible Components 
+			
+			- Ansible Controller 
+				- Install Ansible 
+				- Maintain the Ansible Modules and Inventory file 
+				
+			- Ansible Nodes :
+				- Target Machines/Clients that can be configured through Ansible Controller 
+				
+			Inventory file :
+				- Used to define the Ansible Nodes details
+				- Host Name, User Name and Credentials - SSH Keys / Password 
+				
+			Ansible Modules :
+				- It is a script or function that gets injected into the target machine.
+				- These Modules are based of Python Scripts 
+				- Ansible Inject/push the modules from the Ansible Controller Machine into the Ansible Nodes, perform the desired Task, and Once the Task is over, it will delete that module from that target machine. 
+				
+					Ansible_Controller 								Ansible_Node1 
+					
+						setup_Java_BuildServer.sh ==============>	Copy setup_Java_BuildServer.sh and Execute this script in Ansible Node1
+							apt install git 
+							apt install jdk
+							apt install maven
+							
+							
+				- Ansible Use the Push Mechanism 
+				
+				
+			Ansible is Agentless.
+				
+				
+			- Ansible Config File :
+			
+				- Is used to define the default properties of Ansible 
+	
+	Ansible Concepts 
+		
+			- Ansible Adhoc Commands :
+			
+				- It is used to execute a module in the target machine.
+				- Ansible Adhoc Commands are cannot be reusable
+				
+					Eg.: 
+					
+					Target Server :
+					
+						install git :
+							- apt install git -y				
+			
+			- Ansible Playbooks :
+			
+				- Used to execute the series of task/Modules in the target machine.
+				- Ansible Playbooks should be reusable 
+				- Ansible Playbooks are written using *.yaml Scripts 
+				
+					Eg.: 
+						Target Server : 
+						
+							Setup the Jenkins Slave_Node :
+							
+								- apt install git -y 
+								- apt install jdk -y 
+								- apt install maven -y 
+								- apt install docker.io -y 
+								
+	
+	Working with Ansible :
+	
+		- Install and configure Ansible Controller Machine 
+		- Enable Secure Connection to the Ansible Nodes
+	
+		- Create Ansible Inventory File 
+
+Next :::
+		
+		- Execute the Ansible Modules using Ansible Adhoc commands / Playbooks
+		
+************************
+Day 29 : 14th Mar. 2025 
+************************		
+	
+	Ansible Adhoc Commands 
+	
+	- Ansible Adhoc Commands :
+	
+		- It is used to execute a module in the target machine.
+		- Ansible Adhoc Commands are cannot be reusable
+		
+			Eg.: 
+			
+			Target Server :
+			
+				install git :
+					- apt install git -y				
+
+
+		Task : Deploy an artifact *.war from Jenkins Slave Machine to QA-Server.
+
+			
+	- Ansible Playbooks :
+	
+		- Used to execute the series of task/Modules in the target machine.
+		- Ansible Playbooks should be reusable 
+		- Ansible Playbooks are written using *.yaml Scripts 
+		
+			Eg.: 
+				Target Server : 
+				
+					Setup the Jenkins Slave_Node :
+					
+						- apt install git -y 
+						- apt install jdk -y 
+						- apt install maven -y 
+						- apt install docker.io -y 
+	
+	
+	- Handling Variables in Ansible Playbook ::::
+	
+		- Variables are used to create reusable Ansible Playbooks.
+		
+			- Ansible Environment Variables
+				- Captured using setup module 
+			
+			- User Defined Variables 
+			
+				-> Methods to handle the Variables
+				
+
+	

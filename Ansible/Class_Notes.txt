@@ -164,4 +164,42 @@ Day 29 : 14th Mar. 2025
 				-> Methods to handle the Variables
 				
 
+************************
+Day 30 : 17th Mar. 2025 
+************************
+
+
+	- Ansible Handlers
+	- Ansible Roles using Ansible Galaxy
 	
+	
+	Best Practises :::::
+	
+		-> Playbooks :	Used to execute some series of tasks. 
+						Playbooks should be reusable.
+
+
+
+	- Ansible Roles ::::
+	
+		-> Used to Automatically Organise the Ansible Components 
+		-> Used to Reuse the Ansible Components 
+		-> Used to Share the Ansible Component definitions 
+		
+		
+		Create Ansible Role :
+		
+		Organise/Reuse/Share the Ansible Components
+		
+		Ansible Galaxy 
+		
+		https://galaxy.ansible.com/ui/
+	
+	
+	- Ansible Archetecture / Components : Inventory/Module/Playbooks/Adhoc Commands 
+	
+	- Variables / Handlers / When-Conditional Exections 
+	
+	- Ansible Roles 
+	
+		

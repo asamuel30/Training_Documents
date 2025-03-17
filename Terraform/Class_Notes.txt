@@ -1,0 +1,54 @@
+
+************************
+Day 30 : 17th Mar. 2025 
+************************
+
+	Terraform ::::
+	
+	Infra-structure Management Team :::
+	
+		Provision/Create the IT Resources(Servers)		-- Terraform/Cloudformation/ARM
+		
+		Configure the Servers 							-- Ansible/Chef/Puppet
+					
+		IAC(Infra-structure As Code) Tools - Declarative Scripts using *.json/*.yaml 
+		
+	
+	Terraform Architecture :
+	
+	Ansible & Terraform 
+	
+	Terraform Working Process ::
+	
+		- Identify the Scope : Target Environment(AWS/Azure/GCP)
+		
+		- Write the Terraform Script 
+		
+		- Initialize Terraform Provider using terrafom init 
+				- Terraform Provider is a kind of agent to be installed in local Project/machine to provision the target resources
+				
+		- Perform : Terraform Plan	: Preview the Terraform Scripts
+
+		- Perform : Terraform Apply : Actually implement the changes in target environment
+		
+	
+	Terraform Providers
+	
+		- Terraform Registry ::
+	
+	Install Terraform (Windows)
+	
+		1. Install Terraform https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+		
+		2. Visual Studio Code - To Create Terraform Projects and Terraform Scripts 
+		
+		3. Target Resource parameters.
+		
+		
+	
+		- HCL - HashiCorp Declarative Language (json format - key value pairs)
+		- Terraform Script file should be saved as *.tf
+		
+	
+
+	

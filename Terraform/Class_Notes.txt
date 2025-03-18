@@ -51,4 +51,169 @@ Day 30 : 17th Mar. 2025
 		
 	
 
+************************
+Day 31 : 18th Mar. 2025 
+************************
+
+	Working with Terraform :::
+	
+		- Install Terraform 		--> Local Windows Machine / Linux Machine 
+		
+				https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+				
+				https://developer.hashicorp.com/terraform/install
+				
+
+				Using Manual Approach - Install Terraform on local windows machine 
+				
+					- Download Windows AMD64 Version Terraform -- zipfile 
+						- Right Click and Extract all 
+							- Get the Extracted Terraform Folder 
+								- Get the terraform - binary file 
+								
+					- Setup Environment Variable for terraform binary file 
+						- from windows start menu, search for enviroment variable 
+							- click of edit enviroment variable setting 
+								- find system properties dialog 
+									- select enviroment variables button
+										- On Environment Variables Dialog 
+											- goto to System Variable 
+												- Select path variable and edit 
+													- Click on New 
+														- add C:\Softwares\terraform_1.7.2_windows_amd64
+															- apply the changes and close the settings
+				
+		- Install Visual Studio Code 	- IDE used to create Terraform Projects 
+			
+				https://code.visualstudio.com/download
+				
+		
+		- Open Visual Studio Code
+		
+		
+			On Visual Studio Code : Install Terraform Extension for Visual Studio Code 
+	
+				HashiCorp Terraform
+
+	terraform --version
+
+
+	Terraform Working Process ::
+	
+		- Identify the Scope : Target Environment(AWS/Azure/GCP)
+		
+		- Write the Terraform Script *.tf
+		
+		- Initialize Terraform Provider using terrafom init 
+				- Terraform Provider is a kind of agent to be installed in local Project/machine to provision the target resources
+				
+		- Perform : Terraform Plan	: Preview the Terraform Scripts
+
+		- Perform : Terraform Apply : Actually implement the changes in target environment
+	
+	
+	Using Terraform :
+		
+		>> Create/Add Resources			+
+		
+		>> Change/Modify Resources		~
+		
+		>> Delete/Destroy Resources 	-	
+		
+		
+	Use Terraform Registry/Provider ::		https://registry.terraform.io/browse/providers
+	
+		- Create AWS Access Key and Secret Key 
+		
+				--> sdfasdf
+				
+				--> asdfasdfsdafsdf
+				
+	Terraform State File ::
+	
+		==> Is used by Terraform to maintain the state of the resources in the target infra-structure.
+	
+		==> Preserve the Terraform State File !!!!
+		
+		
+		
+	End-to-End Terraform Project :::
+	
+		VPC,Subnet,Internet-Gateway,Route Table, Route Table Association, Security Group, EC2 Instances....
+		
+		
+Real-Time Projects ::
+
+	On DevOps Perspectives ::: Terraform ???
+	
+	
+Scenario 1: 
+
+	CICD Pipeline :::
+	
+		-> SCM-Checkout
+	
+		-> Application Build 
+	
+		-> Deployed to Target (Test Server)
+		
+		
+
+	Pipeline 1 :	Infra-structure Management Team (IAC Source Code Repositories)
+	
+		SCM_Checkout	-->		Provision New_Test_Server(Terraform)	--> 	Configure New_Test_Server(Ansible)
+		(Ansible-Playbook,
+		Terraform Scripts)
+		
+	Pipeline 2 :		
+	
+		SCM_Checkout	--> 	Application build 		-->		Deploy to New_Test_Server
+		
+
+Scenario 2: 
+
+	Pipeline 1: 
+	
+
+		SCM_Checkout	-->	Application build	-->	Provision New_Test_Server(Terraform)	--> Configure New_Test_Server(Ansible)
+		(Ansible-Playbook,																					|		
+		Terraform Scripts, 																					|
+		Application Codes)																					|
+																											|
+																								Deploy to New_Test_Server
+																											|
+																											|
+																											|
+																											|
+																									Automated Testing 
+																											|
+																											|
+																											|
+																									Notified thru Email  		
+				
+				
+Scenario 3: Best Practise while working with Dynamic Resource Provisioning!
+
+	Pipeline 1: 
+	
+
+		SCM_Checkout	-->	Application build	-->	Provision New_Test_Server(Terraform)	--> Configure New_Test_Server(Ansible)
+		(Ansible-Playbook,																					|		
+		Terraform Scripts, 																					|
+		Application Codes)																					|
+																											|
+																								Deploy to New_Test_Server
+																											|
+																											|
+																											|
+																											|
+																									Automated Testing 
+																											|
+																											|
+																											|
+																									Destroy the New_Test_Server & 
+																										Notified the Users thru Email  																									
+
+
+	
 	

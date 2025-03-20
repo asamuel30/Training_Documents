@@ -1,0 +1,44 @@
+************************
+Day 32 : 20th Mar. 2025 
+************************	
+
+	 : CICD Pipeline Project using Jenkins,Docker,Kubernetes
+
+
+Application :
+		
+		- On-board Application Services to DevOps Pipeline --> Automated Build and Deployment in Kubernetes_Cluster.
+		
+	
+	On DevOps Perspectives :
+	
+		- Detailed DevOps Assessment
+		
+		- Servers need to implement CICD
+
+		- Tools to be install in all these servers
+		
+		- Integrate the Servers 
+		
+		- Create CICD Pipeline Scripts/Templates 
+		
+		
+		- List of Servers(VMs) Needed :::
+		- Purpose of the Servers 
+		- Tools to be install in all these servers'
+		
+		- CICD :::
+		
+		Pipeline Project :::
+
+			Stages :
+			
+				1. SCM_Checkout 										* Source_Code 
+				2. Application Build 									* Build - *.war 
+				3. Application Image Build 								* Appimg:v1.0
+				4. Push Appimg to DockerHub 							* Image Published to DockerHub
+				5. Deploy the Application to Kubernetes_Cluster			* App Deployed to Kubernetes_WorkerNodes
+			
+				
+			
+		

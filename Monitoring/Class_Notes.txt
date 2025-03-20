@@ -1,0 +1,69 @@
+	
+************************
+Day 32 : 20th Mar. 2025 
+************************	
+	
+Continuous Monitoring using Prometheus and Grafana:
+
+1.	Overview of continuous monitoring
+2.	Continuous monitoring tools in DevOps
+3.	Installation and Configuration of Prometheus and Grafana
+4.	Prometheus Architecture
+5.	Monitoring using Prometheus
+6.	Dashboard visualization using Grafana
+
+	
+	- Continuous Monitoring	:::
+	
+		- To ensure business continuity
+		
+		- Continuous Monitoring is required to ensure high-availability of the Applications running in the production environment 
+
+		- Used to Continuously Monitor the Production Environments and the Applications Deployed in Production Environments.
+		
+		- Done by the Production Monitoring Team.
+		
+		- Infra-structure Monitoring
+		
+			- Prometheus/Grafana/Splunk/Dynatrace/ AWS CloudWatch
+			
+				- CPU and Memory / Network Traffic 
+				
+				- 75% --> alert the Team 
+		
+		
+		- Application Monitoring
+		
+			- AppDynamics/DataDog 
+			
+			
+			
+		- Infra-structure Monitoring Tools :
+		
+			- Prometheus		: Infra-structure Monitor Tool 
+			
+			- Grafana			: Visualization Tool - Create Monitoring Dashboards
+			
+			
+		- Architecture of Prometheus :
+		
+		- This Continuous Monitoring is completly owned by the Production Monitoring Team.
+		
+		
+		
+		Install and Configure the Prometheus & Grafana.
+
+			Setup Prometheus, Node Exporter & Grafana
+			
+			VM1. Monitoring Server 	--> Install Prometheus & Grafana 
+			
+			VM2. Target_Server		--> Install Node_Exporter
+			
+	
+	
+	
+	
+	
+	
+	
+	
